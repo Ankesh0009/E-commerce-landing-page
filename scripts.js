@@ -4,18 +4,16 @@ document.addEventListener('DOMContentLoaded', function () {
   const cartItems = document.getElementById('cartItems');
   const emptyCart = document.getElementById('emptyCart');
   const subtotalElement = document.getElementById('cartSubtotal');
-  const wishlistContainer = document.querySelector('.wishlist-container'); // Assuming a container for wishlist icons
-
+  const wishlistContainer = document.querySelector('.wishlist-container'); 
   let isCartOpen = false;
 
-  // Toggle cart dropdown visibility
+
   cartIcon?.addEventListener('click', function (e) {
     e.stopPropagation();
     isCartOpen = !isCartOpen;
     cartDropdown?.classList.toggle('hidden');
   });
 
-  // Close cart dropdown when clicking outside
   document.addEventListener('click', function (e) {
     if (!cartIcon.contains(e.target) && isCartOpen) {
       cartDropdown.classList.add('hidden');
@@ -23,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 
-  // Add product to cart
+ 
   function addToCart(product) {
     emptyCart.classList.add('hidden');
     cartItems.classList.remove('hidden');
@@ -34,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function () {
     updateSubtotal();
   }
 
-  // Create cart item element
+
   function createCartItem(product) {
     const cartItem = document.createElement('div');
     cartItem.className = 'flex items-center gap-3';
@@ -58,7 +56,7 @@ document.addEventListener('DOMContentLoaded', function () {
     return cartItem;
   }
 
-  // Update quantity of cart item
+
   window.updateQuantity = function (btn, change) {
     const quantitySpan = btn.parentElement.querySelector('span');
     let quantity = parseInt(quantitySpan.textContent) + change;
@@ -68,7 +66,6 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   };
 
-  // Remove item from cart
   window.removeItem = function (btn) {
     const item = btn.closest('.flex');
     item.remove();
@@ -79,7 +76,7 @@ document.addEventListener('DOMContentLoaded', function () {
     updateSubtotal();
   };
 
-  // Update subtotal price
+
   function updateSubtotal() {
     let total = 0;
     const items = cartItems.querySelectorAll('.flex');
@@ -91,7 +88,7 @@ document.addEventListener('DOMContentLoaded', function () {
     subtotalElement.textContent = `$${total.toFixed(2)}`;
   }
 
-  // Wishlist functionality using event delegation
+
   wishlistContainer?.addEventListener('click', function (e) {
     if (e.target.closest('.wishlist-icon')) {
       const heartIcon = e.target.closest('.wishlist-icon').querySelector('i');
@@ -99,7 +96,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 
-  // Toggle wishlist icon state
+
   function toggleWishlistIcon(heartIcon) {
     if (heartIcon.classList.contains('ri-heart-line')) {
       heartIcon.classList.remove('ri-heart-line');
