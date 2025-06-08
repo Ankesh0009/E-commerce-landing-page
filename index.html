@@ -4,7 +4,15 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>H&M - Premium Fashion</title>
+  <meta name="description" content="Premium fashion essentials for the modern wardrobe. Timeless designs, quality materials, and the latest trends for men, women, and kids." />
+  <link rel="icon" href="favicon.ico" />
   <link rel="stylesheet" href="style.css" />
+  <!-- Prioritize critical CSS, then load fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
   <script src="https://cdn.tailwindcss.com/3.4.16"></script>
   <script>
     tailwind.config = {
@@ -21,114 +29,111 @@
       },
     };
   </script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
 </head>
 <body class="bg-white">
-   <body class="bg-white">
+
   <header class="w-full">
+    <!-- Accessibility: banner role is set -->
     <div class="bg-primary text-white py-2 px-4 text-xs flex justify-between items-center" role="banner">
       <div>
         <span>Free shipping on orders over $100</span>
       </div>
-      <div class="flex gap-4" role="navigation" aria-label="Top Navigation">
-        <a href="#" class="hover:underline" aria-label="Help">Help</a>
-        <a href="#" class="hover:underline" aria-label="Store Locator">Store Locator</a>
-        <a href="#" class="hover:underline" aria-label="Order Tracking">Order Tracking</a>
+      <nav class="flex gap-4" aria-label="Top Navigation">
+        <a href="#" class="hover:underline focus:outline focus:ring" aria-label="Help">Help</a>
+        <a href="#" class="hover:underline focus:outline focus:ring" aria-label="Store Locator">Store Locator</a>
+        <a href="#" class="hover:underline focus:outline focus:ring" aria-label="Order Tracking">Order Tracking</a>
+      </nav>
+    </div>
+
+    <!-- Main Navigation -->
+    <nav class="flex justify-between items-center py-4 px-6 border-b border-gray-200" aria-label="Main Navigation">
+      <div class="flex items-center gap-8">
+        <a href="#" class="text-xl font-['Pacifico'] text-primary hover:opacity-80 transition-opacity duration-300" aria-label="Home">H&M</a>
+        <div class="hidden md:flex gap-6" role="menubar">
+          <!-- Use role="menuitem" and focus styles -->
+          <a href="#" class="text-sm font-medium relative group focus:outline focus:ring" role="menuitem" aria-label="New In">
+            <span class="relative inline-block">NEW IN
+              <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+            </span>
+          </a>
+          <a href="#" class="text-sm font-medium relative group focus:outline focus:ring" role="menuitem" aria-label="Women">
+            <span class="relative inline-block">WOMEN
+              <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+            </span>
+          </a>
+          <a href="#" class="text-sm font-medium relative group focus:outline focus:ring" role="menuitem" aria-label="Men">
+            <span class="relative inline-block">MEN
+              <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+            </span>
+          </a>
+          <a href="#" class="text-sm font-medium relative group focus:outline focus:ring" role="menuitem" aria-label="Kids">
+            <span class="relative inline-block">KIDS
+              <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+            </span>
+          </a>
+          <a href="#" class="text-sm font-medium relative group focus:outline focus:ring" role="menuitem" aria-label="Sale">
+            <span class="relative inline-block">SALE
+              <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+            </span>
+          </a>
+        </div>
       </div>
-    </div>
-   <!--  Navigation -->
-<nav class="flex justify-between items-center py-4 px-6 border-b border-gray-200" role="navigation" aria-label="Main Navigation">
-  <div class="flex items-center gap-8">
-    <a href="#" class="text-xl font-['Pacifico'] text-primary hover:opacity-80 transition-opacity duration-300" aria-label="Home">H&M</a>
-    <div class="hidden md:flex gap-6" role="menu">
-      <a href="#" class="text-sm font-medium relative group" role="menuitem" aria-label="New In">
-        <span class="relative inline-block">NEW IN
-          <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
-        </span>
-      </a>
-      <a href="#" class="text-sm font-medium relative group" role="menuitem" aria-label="Women">
-        <span class="relative inline-block">WOMEN
-          <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
-        </span>
-      </a>
-      <a href="#" class="text-sm font-medium relative group" role="menuitem" aria-label="Men">
-        <span class="relative inline-block">MEN
-          <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
-        </span>
-      </a>
-      <a href="#" class="text-sm font-medium relative group" role="menuitem" aria-label="Kids">
-        <span class="relative inline-block">KIDS
-          <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
-        </span>
-      </a>
-      <a href="#" class="text-sm font-medium relative group" role="menuitem" aria-label="Sale">
-        <span class="relative inline-block">SALE
-          <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
-        </span>
-      </a>
-    </div>
-  </div>
-  
-  <div class="flex items-center gap-4">
-    <div class="relative">
-      <input type="text" placeholder="Search" class="pl-8 pr-4 py-2 text-sm border-none bg-gray-100 rounded hover:bg-gray-200 focus:bg-gray-200 transition-colors duration-300 outline-none" aria-label="Search">
-      <div class="absolute left-2 top-1/2 transform -translate-y-1/2 w-4 h-4 flex items-center justify-center">
-        <i class="ri-search-line text-gray-500"></i>
-      </div>
-    </div>
-    
-    <div class="w-8 h-8 flex items-center justify-center hover:bg-gray-100 rounded-full transition-colors duration-300 cursor-pointer" aria-label="User  Account">
-      <i class="ri-user-line"></i>
-    </div>
-    
-    <div class="w-8 h-8 flex items-center justify-center hover:bg-gray-100 rounded-full transition-colors duration-300 cursor-pointer" aria-label="Wishlist">
-      <i class="ri-heart-line"></i>
-    </div>
-    
-    <div id="cartIcon" class="w-8 h-8 flex items-center justify-center hover:bg-gray-100 rounded-full transition-colors duration-300 cursor-pointer relative" aria-label="Shopping Cart">
-      <i class="ri-shopping-bag-line"></i>
-      <div id="cartDropdown" class="hidden absolute top-full right-0 mt-2 w-80 bg-white rounded-lg shadow-xl border border-gray-200 z-50">
-        <div class="p-4">
-          <div id="emptyCart" class="text-center py-8">
-            <i class="ri-shopping-bag-line text-4xl text-gray-300 mb-3"></i>
-            <p class="text-gray-500">Your cart is empty</p>
+
+      <div class="flex items-center gap-4">
+        <div class="relative">
+          <input type="text" placeholder="Search" class="pl-8 pr-4 py-2 text-sm border-none bg-gray-100 rounded hover:bg-gray-200 focus:bg-gray-200 transition-colors duration-300 outline-none focus:outline focus:ring" aria-label="Search products"/>
+          <div class="absolute left-2 top-1/2 transform -translate-y-1/2 w-4 h-4 flex items-center justify-center">
+            <i class="ri-search-line text-gray-500"></i>
           </div>
-          <div id="cartItems" class="hidden">
-            <div class="space-y-4 max-h-64 overflow-y-auto"></div>
-            <div class="border-t border-gray-200 mt-4 pt-4">
-              <div class="flex justify-between text-sm mb-2">
-                <span class="font-medium">Subtotal:</span>
-                <span id="cartSubtotal" class="font-medium">$0.00</span>
+        </div>
+        <button class="w-8 h-8 flex items-center justify-center hover:bg-gray-100 rounded-full transition-colors duration-300 cursor-pointer focus:outline focus:ring" aria-label="User Account">
+          <i class="ri-user-line"></i>
+        </button>
+        <button class="w-8 h-8 flex items-center justify-center hover:bg-gray-100 rounded-full transition-colors duration-300 cursor-pointer focus:outline focus:ring" aria-label="Wishlist">
+          <i class="ri-heart-line"></i>
+        </button>
+        <div id="cartIcon" class="w-8 h-8 flex items-center justify-center hover:bg-gray-100 rounded-full transition-colors duration-300 cursor-pointer relative focus:outline focus:ring" aria-label="Shopping Cart" tabindex="0">
+          <i class="ri-shopping-bag-line"></i>
+          <div id="cartDropdown" class="hidden absolute top-full right-0 mt-2 w-80 bg-white rounded-lg shadow-xl border border-gray-200 z-50">
+            <div class="p-4">
+              <div id="emptyCart" class="text-center py-8">
+                <i class="ri-shopping-bag-line text-4xl text-gray-300 mb-3"></i>
+                <p class="text-gray-500">Your cart is empty</p>
               </div>
-              <div class="space-y-2">
-                <a href="#" class="block bg-white text-primary border border-primary text-center py-2 text-sm font-medium !rounded-button whitespace-nowrap hover:bg-gray-50" aria-label="View Cart">View Cart</a>
-                <a href="#" class="block bg-primary text-white text-center py-2 text-sm font-medium !rounded-button whitespace-nowrap hover:bg-opacity-90" aria-label="Checkout">Checkout</a>
+              <div id="cartItems" class="hidden">
+                <div class="space-y-4 max-h-64 overflow-y-auto"></div>
+                <div class="border-t border-gray-200 mt-4 pt-4">
+                  <div class="flex justify-between text-sm mb-2">
+                    <span class="font-medium">Subtotal:</span>
+                    <span id="cartSubtotal" class="font-medium">$0.00</span>
+                  </div>
+                  <div class="space-y-2">
+                    <a href="#" class="block bg-white text-primary border border-primary text-center py-2 text-sm font-medium !rounded-button whitespace-nowrap hover:bg-gray-50 focus:outline focus:ring" aria-label="View Cart">View Cart</a>
+                    <a href="#" class="block bg-primary text-white text-center py-2 text-sm font-medium !rounded-button whitespace-nowrap hover:bg-opacity-90 focus:outline focus:ring" aria-label="Checkout">Checkout</a>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </div>
-</nav>
- </header>
- <!-- Home Section -->
-<section class="relative" aria-label="Hero Section">
-  <div class="w-full h-[500px] relative">
-    <div style="background-image: url('https://readdy.ai/api/search-image?query=Minimalist%20fashion%20scene%20with%20three%20models%20wearing%20neutral-colored%20winter%20outfits%20against%20a%20soft%20gray%20background.%20Models%20are%20positioned%20with%20space%20between%20them%2C%20wearing%20stylish%20coats%2C%20hoodies%2C%20and%20casual%20wear.%20The%20image%20has%20a%20clean%2C%20editorial%20aesthetic%20with%20soft%20lighting%20and%20a%20monochromatic%20color%20palette.%20The%20left%20side%20has%20more%20empty%20space%20for%20text%20overlay.&width=1280&height=720&seq=1&orientation=landscape');" class="absolute inset-0 bg-cover bg-center" role="img" aria-label="Fashion scene with models in winter outfits"></div>
-    <div class="absolute inset-0 bg-black bg-opacity-20 flex flex-col items-center justify-center text-white">
-      <h1 class="text-4xl md:text-5xl font-light tracking-wider mb-6 text-center max-w-2xl">IN THE RIGHT OUTFIT ANYTHING IS POSSIBLE</h1>
-      <div class="flex gap-4">
-        <a href="#" class="bg-white text-primary px-6 py-3 font-medium text-sm !rounded-button whitespace-nowrap hover:shadow-lg" aria-label="Shop Now">SHOP NOW</a>
-        <a href="#" class="bg-primary text-white border border-white px-6 py-3 font-medium text-sm !rounded-button whitespace-nowrap hover:bg-opacity-80" aria-label="Explore">EXPLORE</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="relative" aria-label="Hero Section">
+      <div class="w-full h-[500px] relative">
+        <img src="https://readdy.ai/api/search-image?query=Minimalist%20fashion%20scene%20with%20three%20models%20wearing%20neutral-colored%20winter%20outfits%20against%20a%20plain%20background" alt="Minimalist fashion scene with three models wearing neutral-colored winter outfits" class="w-full h-full object-cover" loading="eager"/>
+        <div class="absolute inset-0 bg-black bg-opacity-20 flex flex-col items-center justify-center text-white">
+          <h1 class="text-4xl md:text-5xl font-light tracking-wider mb-6 text-center max-w-2xl">IN THE RIGHT OUTFIT ANYTHING IS POSSIBLE</h1>
+          <div class="flex gap-4">
+            <a href="#" class="bg-white text-primary px-6 py-3 font-medium text-sm !rounded-button whitespace-nowrap hover:shadow-lg focus:outline focus:ring" aria-label="Shop Now">SHOP NOW</a>
+            <a href="#" class="bg-primary text-white border border-white px-6 py-3 font-medium text-sm !rounded-button whitespace-nowrap hover:bg-opacity-80 focus:outline focus:ring" aria-label="Explore">EXPLORE</a>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 <!-- Winter Collections -->
 <section class="py-16 px-6 max-w-7xl mx-auto" aria-label="Winter Collections">
   <div class="text-center mb-12">
