@@ -1,9 +1,9 @@
-/* Base Styles */
+
 body {
   font-family: 'Inter', sans-serif;
 }
 
-/* Product Card Styles */
+
 .product-card {
   transition: all 0.3s ease;
 }
@@ -28,7 +28,7 @@ body {
   transform: scale(1.05);
 }
 
-/* Category Card Styles */
+
 .category-card:hover .category-overlay {
   background-color: rgba(0, 0, 0, 0.5);
 }
@@ -41,13 +41,12 @@ body {
   transition: transform 0.3s ease;
 }
 
-/* Background Color Styles */
 .bg-primary.text-white {
   transition: all 0.3s ease;
 }
 
 .bg-primary.text-white:hover {
-  background-color: #333333; /* Darker shade for hover */
+  background-color: #333333;
   transform: translateY(-2px);
 }
 
@@ -56,13 +55,13 @@ body {
 }
 
 .bg-white.text-primary:hover {
-  background-color: #f3f3f3; /* Light shade for hover */
+  background-color: #f3f3f3; 
   transform: translateY(-2px);
 }
 
-/* Accessibility Styles */
+
 .bg-primary.text-white:focus,
 .bg-white.text-primary:focus {
-  outline: 2px solid #fff; /* Add focus outline for accessibility */
+  outline: 2px solid #fff; 
   outline-offset: 2px;
 }
