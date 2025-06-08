@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HRF - Premium Fashion</title>
+  
+  <!-- Link to external CSS -->
+  <link rel="stylesheet" href="styles.css" />
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+  <script>
+    // Tailwind CSS configuration
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#000000',
+            secondary: '#ffffff',
+          },
+          borderRadius: {
+            button: '8px',
+          },
+        },
+      },
+    };
+  </script>
+  
+  <!-- Preconnect to Google Fonts for performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Remix Icon CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+</head>
+<body class="bg-white">
+  <!-- Content will go here -->
+   <body class="bg-white">
+  <!-- Top Navigation Bar -->
+  <header class="w-full">
+    <!-- Top Black Bar -->
+    <div class="bg-primary text-white py-2 px-4 text-xs flex justify-between items-center" role="banner">
+      <div>
+        <span>Free shipping on orders over $100</span>
+      </div>
+      <div class="flex gap-4" role="navigation" aria-label="Top Navigation">
+        <a href="#" class="hover:underline" aria-label="Help">Help</a>
+        <a href="#" class="hover:underline" aria-label="Store Locator">Store Locator</a>
+        <a href="#" class="hover:underline" aria-label="Order Tracking">Order Tracking</a>
+      </div>
+    </div>
+ 
+  <!-- Content will continue here -->
+   <!-- Main Navigation -->
+<nav class="flex justify-between items-center py-4 px-6 border-b border-gray-200" role="navigation" aria-label="Main Navigation">
+  <div class="flex items-center gap-8">
+    <a href="#" class="text-xl font-['Pacifico'] text-primary hover:opacity-80 transition-opacity duration-300" aria-label="Home">HRF</a>
+    <div class="hidden md:flex gap-6" role="menu">
+      <a href="#" class="text-sm font-medium relative group" role="menuitem" aria-label="New In">
+        <span class="relative inline-block">NEW IN
+          <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+        </span>
+      </a>
+      <a href="#" class="text-sm font-medium relative group" role="menuitem" aria-label="Women">
+        <span class="relative inline-block">WOMEN
+          <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+        </span>
+      </a>
+      <a href="#" class="text-sm font-medium relative group" role="menuitem" aria-label="Men">
+        <span class="relative inline-block">MEN
+          <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+        </span>
+      </a>
+      <a href="#" class="text-sm font-medium relative group" role="menuitem" aria-label="Kids">
+        <span class="relative inline-block">KIDS
+          <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+        </span>
+      </a>
+      <a href="#" class="text-sm font-medium relative group" role="menuitem" aria-label="Sale">
+        <span class="relative inline-block">SALE
+          <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+        </span>
+      </a>
+    </div>
+  </div>
+  
+  <div class="flex items-center gap-4">
+    <div class="relative">
+      <input type="text" placeholder="Search" class="pl-8 pr-4 py-2 text-sm border-none bg-gray-100 rounded hover:bg-gray-200 focus:bg-gray-200 transition-colors duration-300 outline-none" aria-label="Search">
+      <div class="absolute left-2 top-1/2 transform -translate-y-1/2 w-4 h-4 flex items-center justify-center">
+        <i class="ri-search-line text-gray-500"></i>
+      </div>
+    </div>
+    
+    <div class="w-8 h-8 flex items-center justify-center hover:bg-gray-100 rounded-full transition-colors duration-300 cursor-pointer" aria-label="User  Account">
+      <i class="ri-user-line"></i>
+    </div>
+    
+    <div class="w-8 h-8 flex items-center justify-center hover:bg-gray-100 rounded-full transition-colors duration-300 cursor-pointer" aria-label="Wishlist">
+      <i class="ri-heart-line"></i>
+    </div>
+    
+    <div id="cartIcon" class="w-8 h-8 flex items-center justify-center hover:bg-gray-100 rounded-full transition-colors duration-300 cursor-pointer relative" aria-label="Shopping Cart">
+      <i class="ri-shopping-bag-line"></i>
+      <div id="cartDropdown" class="hidden absolute top-full right-0 mt-2 w-80 bg-white rounded-lg shadow-xl border border-gray-200 z-50">
+        <div class="p-4">
+          <div id="emptyCart" class="text-center py-8">
+            <i class="ri-shopping-bag-line text-4xl text-gray-300 mb-3"></i>
+            <p class="text-gray-500">Your cart is empty</p>
+          </div>
+          <div id="cartItems" class="hidden">
+            <div class="space-y-4 max-h-64 overflow-y-auto"></div>
+            <div class="border-t border-gray-200 mt-4 pt-4">
+              <div class="flex justify-between text-sm mb-2">
+                <span class="font-medium">Subtotal:</span>
+                <span id="cartSubtotal" class="font-medium">$0.00</span>
+              </div>
+              <div class="space-y-2">
+                <a href="#" class="block bg-white text-primary border border-primary text-center py-2 text-sm font-medium !rounded-button whitespace-nowrap hover:bg-gray-50" aria-label="View Cart">View Cart</a>
+                <a href="#" class="block bg-primary text-white text-center py-2 text-sm font-medium !rounded-button whitespace-nowrap hover:bg-opacity-90" aria-label="Checkout">Checkout</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+ </header>
+ <!-- Hero Section -->
+<section class="relative" aria-label="Hero Section">
+  <div class="w-full h-[500px] relative">
+    <div style="background-image: url('https://readdy.ai/api/search-image?query=Minimalist%20fashion%20scene%20with%20three%20models%20wearing%20neutral-colored%20winter%20outfits%20against%20a%20soft%20gray%20background.%20Models%20are%20positioned%20with%20space%20between%20them%2C%20wearing%20stylish%20coats%2C%20hoodies%2C%20and%20casual%20wear.%20The%20image%20has%20a%20clean%2C%20editorial%20aesthetic%20with%20soft%20lighting%20and%20a%20monochromatic%20color%20palette.%20The%20left%20side%20has%20more%20empty%20space%20for%20text%20overlay.&width=1280&height=720&seq=1&orientation=landscape');" class="absolute inset-0 bg-cover bg-center" role="img" aria-label="Fashion scene with models in winter outfits"></div>
+    <div class="absolute inset-0 bg-black bg-opacity-20 flex flex-col items-center justify-center text-white">
+      <h1 class="text-4xl md:text-5xl font-light tracking-wider mb-6 text-center max-w-2xl">IN THE RIGHT OUTFIT ANYTHING IS POSSIBLE</h1>
+      <div class="flex gap-4">
+        <a href="#" class="bg-white text-primary px-6 py-3 font-medium text-sm !rounded-button whitespace-nowrap hover:shadow-lg" aria-label="Shop Now">SHOP NOW</a>
+        <a href="#" class="bg-primary text-white border border-white px-6 py-3 font-medium text-sm !rounded-button whitespace-nowrap hover:bg-opacity-80" aria-label="Explore">EXPLORE</a>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Winter Collections -->
+<section class="py-16 px-6 max-w-7xl mx-auto" aria-label="Winter Collections">
+  <div class="text-center mb-12">
+    <span class="text-sm font-medium text-primary tracking-wider uppercase mb-2 block">New Arrivals</span>
+    <h2 class="text-2xl font-medium mb-2">WINTER COLLECTIONS</h2>
+    <p class="text-gray-500">Get ready for the cold season with our premium winter essentials</p>
+  </div>
+  
+  <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+    <!-- Product 1 -->
+    <div class="product-card relative group" role="article" aria-labelledby="product1">
+      <div class="aspect-[3/4] bg-gray-50 mb-3 relative rounded-lg overflow-hidden">
+        <img src="https://readdy.ai/api/search-image?query=Minimalist%20white%20hoodie%20on%20plain%20white%20background%2C%20product%20photography%20style%2C%20high-quality%20fabric%20texture%20visible%2C%20centered%20composition%2C%20clean%20lighting%2C%20no%20shadows%2C%20fashion%20e-commerce%20style&width=400&height=500&seq=2&orientation=portrait" alt="Luxurious Hoodie" class="w-full h-full object-cover object-top" />
+        <div class="wishlist-icon absolute top-3 right-3 w-8 h-8 bg-white rounded-full flex items-center justify-center shadow-sm transition-transform duration-300 hover:scale-110" aria-label="Add to Wishlist">
+          <i class="ri-heart-line text-primary"></i>
+        </div>
+      </div>
+      <h3 class="text-sm font-medium" id="product1">LUXURIOUS HOODIE</h3>
+      <p class="text-sm text-gray-500">$89.99</p>
+    </div>
+    
+    <!-- Product 2 -->
+    <div class="product-card relative group" role="article" aria-labelledby="product2">
+      <div class="aspect-[3/4] bg-gray-50 mb-3 relative rounded-lg overflow-hidden">
+        <img src="https://readdy.ai/api/search-image?query=Plaid%20wool%20scarf%20with%20black%20and%20white%20checkered%20pattern%20on%20plain%20white%20background%2C%20product%20photography%20style%2C%20neatly%20folded%2C%20soft%20texture%20visible%2C%20centered%20composition%2C%20clean%20lighting%2C%20no%20shadows%2C%20fashion%20e-commerce%20style&width=400&height=500&seq=3&orientation=portrait" alt="Plaid Wool Scarf" class="w-full h-full object-cover object-top" />
+        <div class="wishlist-icon absolute top-3 right-3 w-8 h-8 bg-white rounded-full flex items-center justify-center shadow-sm transition-transform duration-300 hover:scale-110" aria-label="Add to Wishlist">
+          <i class="ri-heart-line text-primary"></i>
+        </div>
+      </div>
+      <h3 class="text-sm font-medium" id="product2">PLAID WOOL SCARF</h3>
+      <p class="text-sm text-gray-500">$49.99</p>
+    </div>
+    
+    <!-- Product 3 -->
+    <div class="product-card relative group" role="article" aria-labelledby="product3">
+      <div class="aspect-[3/4] bg-gray-50 mb-3 relative rounded-lg overflow-hidden">
+        <img src="https://readdy.ai/api/search-image?query=Black%20puffer%20jacket%20on%20plain%20white%20background%2C%20product%20photography%20style%2C%20quilted%20texture%20visible%2C%20centered%20composition%2C%20clean%20lighting%2C%20no%20shadows%2C%20fashion%20e-commerce%20style&width=400&height=500&seq=4&orientation=portrait" alt="Premium Puffer Coat" class="w-full h-full object-cover object-top" />
+        <div class="wishlist-icon absolute top-3 right-3 w-8 h-8 bg-white rounded-full flex items-center justify-center shadow-sm transition-transform duration-300 hover:scale-110" aria-label="Add to Wishlist">
+          <i class="ri-heart-line text-primary"></i>
+        </div>
+      </div>
+      <h3 class="text-sm font-medium" id="product3">PREMIUM PUFFER COAT</h3>
+      <p class="text-sm text-gray-500">$149.99</p>
+    </div>
+    
+    <!-- Product 4 -->
+    <div class="product-card relative group" role="article" aria-labelledby="product4">
+      <div class="aspect-[3/4] bg-gray-50 mb-3 relative rounded-lg overflow-hidden">
+        <img src="https://readdy.ai/api/search-image?query=White%20knit%20beanie%20hat%20on%20plain%20white%20background%2C%20product%20photography%20style%2C%20ribbed%20texture%20visible%2C%20centered%20composition%2C%20clean%20lighting%2C%20no%20shadows%2C%20fashion%20e-commerce%20style&width=400&height=500&seq=5&orientation=portrait" alt="Essential Beanie" class="w-full h-full object-cover object-top" />
+        <div class="wishlist-icon absolute top-3 right-3 w-8 h-8 bg-white rounded-full flex items-center justify-center shadow-sm transition-transform duration-300 hover:scale-110" aria-label="Add to Wishlist">
+          <i class="ri-heart-line text-primary"></i>
+        </div>
+      </div>
+      <h3 class="text-sm font-medium" id="product4">ESSENTIAL BEANIE</h3>
+      <p class="text-sm text-gray-500">$29.99</p>
+    </div>
+    
+    <!-- Additional Products -->
+    <!-- Product 5 -->
+    <div class="product-card relative group" role="article" aria-labelledby="product5">
+      <div class="aspect-[3/4] bg-gray-50 mb-3 relative rounded-lg overflow-hidden">
+        <img src="https://readdy.ai/api/search-image?query=Elegant%20camel%20colored%20wool%20coat%20on%20pure%20white%20background.%20Minimalist%20product%20photography%20showing%20the%20luxurious%20texture%20and%20tailored%20fit.%20Clean%20composition%20with%20perfect%20lighting%20highlighting%20the%20premium%20quality%20and%20classic%20design%20details.%20Professional%20e-commerce%20style%20with%20subtle%20shadows&width=400&height=500&seq=22&orientation=portrait" alt="Classic Wool Coat" class="w-full h-full object-cover object-top" />
+        <div class="wishlist-icon absolute top-3 right-3 w-8 h-8 bg-white rounded-full flex items-center justify-center shadow-sm transition-transform duration-300 hover:scale-110" aria-label="Add to Wishlist">
+          <i class="ri-heart-line text-primary"></i>
+        </div>
+      </div>
+      <h3 class="text-sm font-medium" id="product5">CLASSIC WOOL COAT</h3>
+      <p class="text-sm text-gray-500">$199.99</p>
+    </div>
+    
+    <!-- Product 6 -->
+    <div class="product-card relative group" role="article" aria-labelledby="product6">
+      <div class="aspect-[3/4] bg-gray-50 mb-3 relative rounded-lg overflow-hidden">
+        <img src="https://readdy.ai/api/search-image?query=Light%20pink%20beanie%20hat%20on%20plain%20white%20background%2C%20product%20photography%20style%2C%20soft%20knit%20texture%20visible%2C%20centered%20composition%2C%20clean%20lighting%2C%20no%20shadows%2C%20fashion%20e-commerce%20style&width=400&height=500&seq=7&orientation=portrait" alt="Blush Beanie" class="w-full h-full object-cover object-top" />
+        <div class="wishlist-icon absolute top-3 right-3 w-8 h-8 bg-white rounded-full flex items-center justify-center shadow-sm transition-transform duration-300 hover:scale-110" aria-label="Add to Wishlist">
+          <i class="ri-heart-line text-primary"></i>
+        </div>
+      </div>
+      <h3 class="text-sm font-medium" id="product6">BLUSH BEANIE</h3>
+      <p class="text-sm text-gray-500">$29.99</p>
+    </div>
+    
+    <!-- Product 7 -->
+    <div class="product-card relative group" role="article" aria-labelledby="product7">
+      <div class="aspect-[3/4] bg-gray-50 mb-3 relative rounded-lg overflow-hidden">
+        <img src="https://public.readdy.ai/ai/img_res/6f0f429d-0f7b-454f-8026-442d5834a13d.png" alt="Leather Gloves" class="w-full h-full object-cover object-top" />
+        <div class="wishlist-icon absolute top-3 right-3 w-8 h-8 bg-white rounded-full flex items-center justify-center shadow-sm transition-transform duration-300 hover:scale-110" aria-label="Add to Wishlist">
+          <i class="ri-heart-line text-primary"></i>
+        </div>
+      </div>
+      <h3 class="text-sm font-medium" id="product7">LEATHER GLOVES</h3>
+      <p class="text-sm text-gray-500">$59.99</p>
+    </div>
+    
+    <!-- Product 8 -->
+    <div class="product-card relative group" role="article" aria-labelledby="product8">
+      <div class="aspect-[3/4] bg-gray-50 mb-3 relative rounded-lg overflow-hidden">
+        <img src="https://readdy.ai/api/search-image?query=White%20sneakers%20on%20plain%20white%20background%2C%20product%20photography%20style%2C%20clean%20minimalist%20design%2C%20centered%20composition%2C%20clean%20lighting%2C%20no%20shadows%2C%20fashion%20e-commerce%20style&width=400&height=500&seq=9&orientation=portrait" alt="Comfort Sneakers" class="w-full h-full object-cover object-top" />
+        <div class="wishlist-icon absolute top-3 right-3 w-8 h-8 bg-white rounded-full flex items-center justify-center shadow-sm transition-transform duration-300 hover:scale-110" aria-label="Add to Wishlist">
+          <i class="ri-heart-line text-primary"></i>
+        </div>
+      </div>
+      <h3 class="text-sm font-medium" id="product8">COMFORT SNEAKERS</h3>
+      <p class="text-sm text-gray-500">$119.99</p>
+    </div>
+  </div>
+  
+  <div class="flex justify-center mt-10">
+    <a href="#" class="bg-primary text-white px-6 py-3 text-sm font-medium !rounded-button whitespace-nowrap hover:bg-opacity-80 hover:shadow-lg transition-all duration-300" aria-label="View All Products">VIEW ALL PRODUCTS</a>
+  </div>
+</section>
+<!-- Promotional Sections -->
+<section class="py-10 px-6 max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8" aria-label="Promotional Sections">
+  <!-- Valentine's Promo -->
+  <div class="relative h-[400px] overflow-hidden" role="article" aria-labelledby="valentinesPromo">
+    <div style="background-image: url('https://readdy.ai/api/search-image?query=Minimalist%20Valentines%20Day%20themed%20fashion%20display%20with%20soft%20pink%20and%20red%20accessories%20against%20a%20neutral%20background.%20Elegant%20scarves%2C%20gloves%2C%20and%20small%20gift%20items%20arranged%20artistically.%20Clean%2C%20editorial%20styling%20with%20subtle%20romantic%20elements.%20The%20image%20has%20a%20premium%2C%20high-end%20feel%20with%20perfect%20lighting%20and%20composition.&width=600&height=400&seq=10&orientation=landscape');" class="absolute inset-0 bg-cover bg-center" role="img" aria-label="Valentine's Day themed fashion display"></div>
+    <div class="absolute inset-0 bg-gradient-to-r from-black/60 to-black/20 flex flex-col justify-center p-8 text-white">
+      <h2 class="text-3xl font-light mb-2" id="valentinesPromo">Valentine's</h2>
+      <p class="text-lg mb-6">Find the perfect gift for your loved ones</p>
+      <a href="#" class="bg-white text-primary px-6 py-3 text-sm font-medium w-fit !rounded-button whitespace-nowrap hover:shadow-lg hover:bg-opacity-90 transition-all duration-300" aria-label="Shop Valentine's Collection">SHOP NOW</a>
+    </div>
+  </div>
+  
+  <!-- Perfect Look Promo -->
+  <div class="relative h-[400px] overflow-hidden bg-gray-100 p-8 flex flex-col justify-center" role="article" aria-labelledby="perfectLookPromo">
+    <h2 class="text-2xl font-medium mb-2" id="perfectLookPromo">FIND YOUR PERFECT LOOK AT HRF'S STY</h2>
+    <p class="text-gray-600 mb-6">Discover our curated collection of premium essentials designed for everyday elegance. Our timeless pieces combine comfort with sophisticated style for the modern wardrobe.</p>
+    <div class="mb-6">
+      <span class="text-4xl font-bold">87%</span>
+      <span class="text-lg ml-2">OFF DISCOUNT!</span>
+    </div>
+    <a href="#" class="bg-primary text-white px-6 py-3 text-sm font-medium w-fit !rounded-button whitespace-nowrap hover:bg-opacity-80 hover:shadow-lg transition-all duration-300" aria-label="Shop Perfect Look Collection">SHOP NOW</a>
+  </div>
+</section>
+<!-- Winter Campaign -->
+<section class="py-10 px-6 max-w-7xl mx-auto" aria-label="Winter Campaign">
+  <div class="relative h-[400px] overflow-hidden rounded" role="article" aria-labelledby="winterCampaign">
+    <div style="background-image: url('https://readdy.ai/api/search-image?query=Three%20models%20walking%20on%20a%20snowy%20beach%20wearing%20stylish%20winter%20outfits%20in%20neutral%20tones.%20Wide%20landscape%20shot%20with%20plenty%20of%20negative%20space.%20Models%20are%20spaced%20apart%2C%20wearing%20different%20styles%20of%20coats%20and%20winter%20accessories.%20Minimalist%20winter%20fashion%20editorial%20with%20a%20clean%2C%20monochromatic%20aesthetic%20and%20soft%20natural%20lighting.&width=1280&height=500&seq=11&orientation=landscape');" class="absolute inset-0 bg-cover bg-center" role="img" aria-label="Winter fashion editorial with models on a snowy beach"></div>
+    <div class="absolute inset-0 bg-black bg-opacity-30 flex flex-col items-center justify-center p-8 text-white text-center">
+      <h2 class="text-3xl font-medium mb-2" id="winterCampaign">WEAR TO WINTER</h2>
+      <p class="text-lg mb-6 max-w-md">Explore our collection of premium winter essentials designed for style and warmth</p>
+      <a href="#" class="bg-white text-primary px-6 py-3 text-sm font-medium w-fit !rounded-button whitespace-nowrap hover:shadow-lg hover:bg-opacity-90 transition-all duration-300" aria-label="Shop Winter Collection">SHOP NOW</a>
+    </div>
+  </div>
+</section>
+<!-- Featured Collections Grid -->
+<section class="py-16 px-6 max-w-7xl mx-auto" aria-label="Featured Collections">
+  <div class="text-center mb-12">
+    <span class="text-sm font-medium text-primary tracking-wider uppercase mb-2 block">Explore Our Selection</span>
+    <h2 class="text-2xl font-medium">TRENDING CATEGORIES</h2>
+    <p class="text-gray-500 mt-2">Discover the latest styles in our curated collections</p>
+  </div>
+  
+  <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+    <!-- Category 1 -->
+    <div class="category-card relative aspect-square overflow-hidden group cursor-pointer" role="article" aria-labelledby="category1">
+      <div style="background-image: url('https://readdy.ai/api/search-image?query=Stack%20of%20neatly%20folded%20jeans%20in%20various%20shades%20of%20blue%20and%20black%20against%20a%20white%20background.%20Clean%2C%20minimalist%20product%20photography%20with%20soft%20shadows.%20The%20denim%20textures%20are%20clearly%20visible%2C%20showing%20the%20quality%20of%20the%20fabric.%20Professional%20e-commerce%20style%20image%20with%20perfect%20lighting.&width=400&height=400&seq=12&orientation=squarish');" class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" role="img" aria-label="Neatly folded jeans"></div>
+      <div class="category-overlay absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center transition-all duration-500 group-hover:bg-opacity-60">
+        <div class="transform transition-transform duration-500 group-hover:-translate-y-2">
+          <h3 class="category-name text-white text-xl font-medium mb-2" id="category1">JEANS</h3>
+          <p class="text-white text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-500">Explore Collection</p>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Category 2 -->
+    <div class="category-card relative aspect-square overflow-hidden group cursor-pointer" role="article" aria-labelledby="category2">
+      <div style="background-image: url('https://readdy.ai/api/search-image?query=Minimalist%20white%20hoodie%20hanging%20against%20a%20light%20gray%20background.%20Clean%2C%20editorial%20product%20photography%20with%20subtle%20shadows.%20The%20fabric%20texture%20and%20details%20are%20clearly%20visible%2C%20showing%20the%20quality%20of%20the%20garment.%20Professional%20e-commerce%20style%20image%20with%20perfect%20lighting.&width=400&height=400&seq=13&orientation=squarish');" class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" role="img" aria-label="Minimalist white hoodie"></div>
+      <div class="category-overlay absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center transition-all duration-500 group-hover:bg-opacity-60">
+        <div class="transform transition-transform duration-500 group-hover:-translate-y-2">
+          <h3 class="category-name text-white text-xl font-medium mb-2" id="category2">HOODIES</h3>
+          <p class="text-white text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-500">Explore Collection</p>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Category 3 -->
+    <div class="category-card relative aspect-square overflow-hidden group cursor-pointer" role="article" aria-labelledby="category3">
+      <div style="background-image: url('https://readdy.ai/api/search-image?query=Neatly%20arranged%20collection%20of%20minimalist%20hats%20including%20beanies%20and%20caps%20in%20neutral%20colors%20against%20a%20light%20background.%20Clean%2C%20editorial%20product%20photography%20with%20subtle%20shadows.%20The%20fabric%20textures%20and%20details%20are%20clearly%20visible.%20Professional%20e-commerce%20style%20image%20with%20perfect%20lighting.&width=400&height=400&seq=14&orientation=squarish');" class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" role="img" aria-label="Collection of hats"></div>
+      <div class="category-overlay absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center transition-all duration-500 group-hover:bg-opacity-60">
+        <div class="transform transition-transform duration-500 group-hover:-translate-y-2">
+          <h3 class="category-name text-white text-xl font-medium mb-2" id="category3">HATS</h3>
+          <p class="text-white text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-500">Explore Collection</p>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Category 4 -->
+    <div class="category-card relative aspect-square overflow-hidden group cursor-pointer" role="article" aria-labelledby="category4">
+      <div style="background-image: url('https://readdy.ai/api/search-image?query=Person%20wearing%20minimalist%20white%20sneakers%20walking%20on%20a%20light%20background.%20Only%20the%20lower%20legs%20and%20feet%20are%20visible.%20Clean%2C%20editorial%20fashion%20photography%20with%20subtle%20shadows.%20The%20sneakers%20are%20the%20focal%20point%2C%20showing%20their%20design%20and%20quality.%20Professional%20e-commerce%20style%20image%20with%20perfect%20lighting.&width=400&height=400&seq=15&orientation=squarish');" class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" role="img" aria-label="Minimalist white sneakers"></div>
+      <div class="category-overlay absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center transition-all duration-500 group-hover:bg-opacity-60">
+        <div class="transform transition-transform duration-500 group-hover:-translate-y-2">
+          <h3 class="category-name text-white text-xl font-medium mb-2" id="category4">SNEAKERS</h3>
+          <p class="text-white text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-500">Explore Collection</p>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Category 5 -->
+    <div class="category-card relative aspect-square overflow-hidden group cursor-pointer" role="article" aria-labelledby="category5">
+      <div style="background-image: url('https://readdy.ai/api/search-image?query=Minimalist%20black%20jacket%20hanging%20against%20a%20light%20gray%20background.%20Clean%2C%20editorial%20product%20photography%20with%20subtle%20shadows.%20The%20fabric%20texture%20and%20details%20are%20clearly%20visible%2C%20showing%20the%20quality%20of%20the%20garment.%20Professional%20e-commerce%20style%20image%20with%20perfect%20lighting.&width=400&height=400&seq=16&orientation=squarish');" class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" role="img" aria-label="Minimalist black jacket"></div>
+      <div class="category-overlay absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center transition-all duration-500 group-hover:bg-opacity-60">
+        <div class="transform transition-transform duration-500 group-hover:-translate-y-2">
+          <h3 class="category-name text-white text-xl font-medium mb-2" id="category5">JACKETS</h3>
+          <p class="text-white text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-500">Explore Collection</p>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Category 6 -->
+    <div class="category-card relative aspect-square overflow-hidden group cursor-pointer" role="article" aria-labelledby="category6">
+      <div style="background-image: url('https://readdy.ai/api/search-image?query=Collection%20of%20minimalist%20accessories%20including%20watches%2C%20bracelets%2C%20and%20small%20leather%20goods%20arranged%20neatly%20against%20a%20light%20background.%20Clean%2C%20editorial%20product%20photography%20with%20subtle%20shadows.%20The%20textures%20and%20details%20are%20clearly%20visible%2C%20showing%20the%20quality%20of%20the%20items.%20Professional%20e-commerce%20style%20image%20with%20perfect%20lighting.&width=400&height=400&seq=17&orientation=squarish');" class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" role="img" aria-label="Collection of minimalist accessories"></div>
+      <div class="category-overlay absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center transition-all duration-500 group-hover:bg-opacity-60">
+        <div class="transform transition-transform duration-500 group-hover:-translate-y-2">
+          <h3 class="category-name text-white text-xl font-medium mb-2" id="category6">ACCESSORIES</h3>
+          <p class="text-white text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-500">Explore Collection</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Shop By Category -->
+<section class="py-16 px-6 max-w-7xl mx-auto bg-gray-100">
+    <div class="text-center mb-12">
+        <h2 class="text-2xl font-medium">SHOP BY CATEGORY</h2>
+        <p class="text-gray-500 mt-2">Find your style in our curated collections</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <!-- Men -->
+        <div class="relative h-[400px] overflow-hidden rounded group cursor-pointer transition-transform duration-300 hover:shadow-lg">
+            <div style="background-image: url('https://readdy.ai/api/search-image?query=Stylish%20male%20model%20wearing%20a%20minimalist%20black%20coat%20against%20a%20neutral%20background.%20The%20model%20is%20photographed%20from%20chest%20up%2C%20looking%20slightly%20away%20from%20camera.%20Clean%2C%20editorial%20fashion%20photography%20with%20perfect%20lighting%20highlighting%20the%20texture%20and%20fit%20of%20the%20coat.%20Monochromatic%20aesthetic%20with%20a%20premium%20feel.&width=400&height=500&seq=18&orientation=portrait');" class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"></div>
+            <div class="absolute inset-0 bg-black bg-opacity-40 flex flex-col justify-center items-center transition-all duration-500 group-hover:bg-opacity-60">
+                <div class="transform transition-transform duration-500 group-hover:-translate-y-2">
+                    <h2 class="text-3xl font-medium text-white mb-2">MEN</h2>
+                    <p class="text-white text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-500">Explore Collection</p>
+                    <a href="#" class="mt-2 px-4 py-2 bg-white text-black rounded hover:bg-gray-200 transition">View Now</a>
+                </div>
+            </div>
+        </div>
+        <!-- Women -->
+        <div class="relative h-[400px] overflow-hidden rounded group cursor-pointer transition-transform duration-300 hover:shadow-lg">
+            <div style="background-image: url('https://readdy.ai/api/search-image?query=Stylish%20female%20model%20with%20natural%20curly%20hair%20wearing%20a%20minimalist%20black%20top%20against%20a%20neutral%20background.%20The%20model%20is%20photographed%20from%20chest%20up%2C%20with%20a%20confident%20expression.%20Clean%2C%20editorial%20fashion%20photography%20with%20perfect%20lighting%20highlighting%20the%20models%20features%20and%20the%20texture%20of%20the%20clothing.%20Monochromatic%20aesthetic%20with%20a%20premium%20feel.&width=400&height=500&seq=19&orientation=portrait');" class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"></div>
+            <div class="absolute inset-0 bg-black bg-opacity-40 flex flex-col justify-center items-center transition-all duration-500 group-hover:bg-opacity-60">
+                <div class="transform transition-transform duration-500 group-hover:-translate-y-2">
+                    <h2 class="text-3xl font-medium text-white mb-2">WOMEN</h2>
+                    <p class="text-white text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-500">Explore Collection</p>
+                    <a href="#" class="mt-2 px-4 py-2 bg-white text-black rounded hover:bg-gray-200 transition">View Now</a>
+                </div>
+            </div>
+        </div>
+        <!-- Kids -->
+        <div class="relative h-[400px] overflow-hidden rounded group cursor-pointer transition-transform duration-300 hover:shadow-lg">
+            <div style="background-image: url('https://readdy.ai/api/search-image?query=Stylish%20child%20model%20wearing%20a%20minimalist%20dark%20coat%20against%20a%20neutral%20background.%20The%20child%20is%20photographed%20from%20chest%20up%2C%20with%20a%20natural%20expression.%20Clean%2C%20editorial%20fashion%20photography%20with%20perfect%20lighting%20highlighting%20the%20texture%20and%20fit%20of%20the%20coat.%20Monochromatic%20aesthetic%20with%20a%20premium%20feel.&width=400&height=500&seq=20&orientation=portrait');" class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"></div>
+            <div class="absolute inset-0 bg-black bg-opacity-40 flex flex-col justify-center items-center transition-all duration-500 group-hover:bg-opacity-60">
+                <div class="transform transition-transform duration-500 group-hover:-translate-y-2">
+                    <h2 class="text-3xl font-medium text-white mb-2">KIDS</h2>
+                    <p class="text-white text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-500">Explore Collection</p>
+                    <a href="#" class="mt-2 px-4 py-2 bg-white text-black rounded hover:bg-gray-200 transition">View Now</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Footer -->
+<footer class="bg-primary text-white pt-16 pb-8">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8 pb-12 border-b border-gray-700">
+            <div>
+                <a href="#" class="text-2xl font-['Pacifico'] mb-6 block">HRF</a>
+                <p class="text-gray-300 text-sm mb-6">Premium fashion essentials for the modern wardrobe. Timeless designs crafted with quality materials.</p>
+                <div class="flex gap-4">
+                    <a href="#" aria-label="Facebook" class="w-8 h-8 flex items-center justify-center bg-white bg-opacity-10 rounded-full hover:bg-opacity-20 transition">
+                        <i class="ri-facebook-fill text-sm"></i>
+                    </a>
+                    <a href="#" aria-label="Instagram" class="w-8 h-8 flex items-center justify-center bg-white bg-opacity-10 rounded-full hover:bg-opacity-20 transition">
+                        <i class="ri-instagram-line text-sm"></i>
+                    </a>
+                    <a href="#" aria-label="Twitter" class="w-8 h-8 flex items-center justify-center bg-white bg-opacity-10 rounded-full hover:bg-opacity-20 transition">
+                        <i class="ri-twitter-x-line text-sm"></i>
+                    </a>
+                    <a href="#" aria-label="Pinterest" class="w-8 h-8 flex items-center justify-center bg-white bg-opacity-10 rounded-full hover:bg-opacity-20 transition">
+                        <i class="ri-pinterest-line text-sm"></i>
+                    </a>
+                </div>
+            </div>
+            <div>
+                <h3 class="text-sm font-semibold uppercase mb-4">SHOP</h3>
+                <ul class="space-y-2">
+                    <li><a href="#" class="text-gray-300 hover:text-white text-sm transition">New Arrivals</a></li>
+                    <li><a href="#" class="text-gray-300 hover:text-white text-sm transition">Women</a></li>
+                    <li><a href="#" class="text-gray-300 hover:text-white text-sm transition">Men</a></li>
+                    <li><a href="#" class="text-gray-300 hover:text-white text-sm transition">Kids</a></li>
+                    <li><a href="#" class="text-gray-300 hover:text-white text-sm transition">Accessories</a></li>
+                    <li><a href="#" class="text-gray-300 hover:text-white text-sm transition">Sale</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="text-sm font-semibold uppercase mb-4">COMPANY</h3>
+                <ul class="space-y-2">
+                    <li><a href="#" class="text-gray-300 hover:text-white text-sm transition">About Us</a></li>
+                    <li><a href="#" class="text-gray-300 hover:text-white text-sm transition">Careers</a></li>
+                    <li><a href="#" class="text-gray-300 hover:text-white text-sm transition">Sustainability</a></li>
+                    <li><a href="#" class="text-gray-300 hover:text-white text-sm transition">Store Locator</a></li>
+                    <li><a href="#" class="text-gray-300 hover:text-white text-sm transition">Contact Us</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="text-sm font-semibold uppercase mb-4">HELP</h3>
+                <ul class="space-y-2">
+                    <li><a href="#" class="text-gray-300 hover:text-white text-sm transition">Customer Service</a></li>
+                    <li><a href="#" class="text-gray-300 hover:text-white text-sm transition">Shipping & Returns</a></li>
+                    <li><a href="#" class="text-gray-300 hover:text-white text-sm transition">Size Guide</a></li>
+                    <li><a href="#" class="text-gray-300 hover:text-white text-sm transition">FAQs</a></li>
+                    <li><a href="#" class="text-gray-300 hover:text-white text-sm transition">Privacy Policy</a></li>
+                    <li><a href="#" class="text-gray-300 hover:text-white text-sm transition">Terms & Conditions</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="pt-8 flex flex-col md:flex-row justify-between items-center">
+            <div class="mb-4 md:mb-0">
+                <p class="text-sm text-gray-400">© 2025 HRF. All rights reserved.</p>
+            </div>
+            <div class="flex gap-3">
+                <div class="w-10 h-6 flex items-center justify-center bg-white bg-opacity-10 rounded">
+                    <i class="ri-visa-fill"></i>
+                </div>
+                <div class="w-10 h-6 flex items-center justify-center bg-white bg-opacity-10 rounded">
+                    <i class="ri-mastercard-fill"></i>
+                </div>
+                <div class="w-10 h-6 flex items-center justify-center bg-white bg-opacity-10 rounded">
+                    <i class="ri-paypal-fill"></i>
+                </div>
+                <div class="w-10 h-6 flex items-center justify-center bg-white bg-opacity-10 rounded">
+                    <i class="ri-apple-fill"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+ <script src="scripts.js"></script>
+
+</body>
+</html>
