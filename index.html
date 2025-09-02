@@ -1,335 +1,477 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
-
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>REFFTONIX Labs - Transform Learning with Robotics</title>
-    
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Google Fonts: Inter -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
-    <!-- Model Viewer -->
-    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
-
-    <link rel="stylesheet" href="style.css">
-    
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #FFFFFF;
-            color: #333333;
-        }
-        .soft-glow {
-            box-shadow: 0 0 15px rgba(108, 44, 163, 0.2), 0 0 5px rgba(108, 44, 163, 0.1);
-        }
-        .section-reveal {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-        }
-        .section-reveal.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    </style>
-    
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        'primary-purple': '#6C2CA3',
-                        'accent-yellow': '#E9B949',
-                        'dark-purple': '#4B1E72',
-                        'light-gray': '#F5F5F5',
-                        'neutral-text': '#333333',
-                    }
-                }
-            }
-        }
-    </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>H&M - Premium Fashion</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#000000',
+            secondary: '#ffffff',
+          },
+          borderRadius: {
+            button: '8px',
+          },
+        },
+      },
+    };
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
 </head>
-
 <body class="bg-white">
-
-    <!-- Header -->
-    <header id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
-        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#" class="text-2xl font-bold text-primary-purple">REFFTONIX Labs</a>
-            <div class="hidden md:flex items-center space-x-8">
-                <a href="#home" class="text-neutral-text font-semibold hover:text-primary-purple transition-colors">Home</a>
-                <a href="#labs" class="text-neutral-text font-semibold hover:text-primary-purple transition-colors">Labs</a>
-                <a href="#contact" class="text-neutral-text font-semibold hover:text-primary-purple transition-colors">Contact</a>
-            </div>
-             <a href="#contact" class="hidden md:inline-block bg-primary-purple text-white font-semibold px-5 py-2 rounded-full hover:bg-opacity-90 transition-all">Get Started</a>
-        </nav>
-    </header>
-
-    <!-- Hero Section -->
-    <section id="home" class="relative pt-32 pb-16 md:pt-40 md:pb-24 overflow-hidden">
-         <div class="absolute inset-0 bg-gradient-to-br from-primary-purple/5 to-white -z-10"></div>
-        <div class="container mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
-            <div class="text-center md:text-left">
-                <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-neutral-text leading-tight mb-4">
-                    Transform Learning with <span class="text-primary-purple">REFFTONIX Labs</span>
-                </h1>
-                <p class="text-lg md:text-xl text-neutral-text/80 mb-8">
-                    Next-generation robotics and innovation labs for schools & colleges.
-                </p>
-                <a href="#contact" class="inline-block bg-primary-purple text-white font-bold text-lg px-8 py-4 rounded-full shadow-lg hover:bg-opacity-90 transition-all transform hover:scale-105 soft-glow">
-                    Setup a Lab in Your Institution
-                </a>
-            </div>
-            <div class="relative">
-                <img src="https://storage.googleapis.com/gemini-prod/images/2b740751-039c-4828-b80d-8557d391f1a5" alt="Futuristic Robotics Lab Illustration" class="w-full h-auto rounded-2xl shadow-2xl">
-                <div class="absolute -top-4 -right-4 w-24 h-24 bg-accent-yellow/20 rounded-full blur-2xl"></div>
-                 <div class="absolute -bottom-8 -left-8 w-32 h-32 bg-primary-purple/10 rounded-full blur-2xl"></div>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section class="py-20 bg-light-gray section-reveal">
-        <div class="container mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
-            <div class="order-2 md:order-1">
-                <h2 class="text-3xl md:text-4xl font-bold text-neutral-text mb-4">Pioneering the Future of Education</h2>
-                <p class="text-neutral-text/80 mb-4">
-                    At REFFTONIX Labs, our mission is to ignite curiosity and foster innovation. We empower the next generation with cutting-edge skills in robotics, AI, and IoT, building a strong foundation for the technology-driven careers of tomorrow.
-                </p>
-                 <p class="text-neutral-text/80">
-                    We envision a world where every student has access to hands-on learning experiences that transform complex theories into tangible creations.
-                </p>
-            </div>
-
-            <!-- 3D Model Instead of Image -->
-            <div class="order-1 md:order-2">
-                <model-viewer src="robotic_arm_icon_minimal.glb"
-                              alt="Robotic Arm 3D Model"
-                              auto-rotate
-                              camera-controls
-                              style="width: 100%; height: 400px; background: transparent;">
-                </model-viewer>
-            </div>
-        </div>
-    </section>
-
-
-
-    <!-- Why Every Institution Needs This Lab Section -->
-    <section class="py-20 section-reveal">
-        <div class="container mx-auto px-6 text-center">
-            <h2 class="text-3xl md:text-4xl font-bold text-neutral-text mb-12">Why Every Institution Needs a REFFTONIX Lab</h2>
-            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
-                <!-- Card 1 -->
-                <div class="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover:shadow-primary-purple/20 hover:-translate-y-2 transition-all duration-300">
-                    <div class="bg-primary-purple/10 text-primary-purple w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2z"/><path d="M9 3v18"/><path d="M15 3v18"/><path d="M3 9h18"/><path d="M3 15h18"/></svg>
-                    </div>
-                    <h3 class="text-xl font-bold mb-2">Innovation Hub</h3>
-                    <p class="text-neutral-text/70">A creative space for students to brainstorm, experiment, and bring ideas to life.</p>
-                </div>
-                <!-- Card 2 -->
-                <div class="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover:shadow-primary-purple/20 hover:-translate-y-2 transition-all duration-300">
-                     <div class="bg-primary-purple/10 text-primary-purple w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
-                    </div>
-                    <h3 class="text-xl font-bold mb-2">Skill Development</h3>
-                    <p class="text-neutral-text/70">Hands-on training in future-ready skills like coding, AI, and hardware design.</p>
-                </div>
-                <!-- Card 3 -->
-                <div class="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover:shadow-primary-purple/20 hover:-translate-y-2 transition-all duration-300">
-                     <div class="bg-primary-purple/10 text-primary-purple w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.3.05-3.05-.64-.75-2.2-1.34-3.05-.05z"/><path d="M19.5 8.5c1.5-1.26 2-5 2-5s-3.74.5-5 2c-.71.84-.7 2.3-.05 3.05.64.75 2.2 1.34 3.05.05z"/><path d="M12 22s-4-2-6-4"/><path d="m14 2-2.1 2.1c-.6.6-.5 1.6.2 2.1l.1.1c.7.5 1.6.4 2.1-.2L16 4l-2-2z"/><path d="m2 14 2.1-2.1c.6-.6.5-1.6-.2-2.1l-.1-.1c-.7-.5-1.6-.4-2.1.2L2 10l2 4z"/><path d="m12 2 4.9 4.9"/><path d="m10 22 4.9-4.9"/></svg>
-                    </div>
-                    <h3 class="text-xl font-bold mb-2">Industry Readiness</h3>
-                    <p class="text-neutral-text/70">Prepares students for high-demand careers in technology and engineering.</p>
-                </div>
-                <!-- Card 4 -->
-                <div class="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover:shadow-primary-purple/20 hover:-translate-y-2 transition-all duration-300">
-                     <div class="bg-primary-purple/10 text-primary-purple w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg>
-                    </div>
-                    <h3 class="text-xl font-bold mb-2">Competitions</h3>
-                    <p class="text-neutral-text/70">A launchpad to compete and excel in national & international events.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Our Labs Section -->
-    <section id="labs" class="py-20 bg-light-gray section-reveal">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl md:text-4xl font-bold text-neutral-text text-center mb-12">Our Labs Across the Nation</h2>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Lab Card -->
-                <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 transform hover:scale-105">
-                    <div class="p-6">
-                        <div class="flex justify-between items-start">
-                             <h3 class="text-xl font-bold text-neutral-text mb-2">Innovation Lab, Delhi</h3>
-                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary-purple/70"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
-                        </div>
-                        <p class="text-neutral-text/70">Modern lab at a leading engineering college, focusing on AI and machine learning applications.</p>
-                    </div>
-                </div>
-                 <!-- Lab Card -->
-                <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 transform hover:scale-105">
-                    <div class="p-6">
-                         <div class="flex justify-between items-start">
-                             <h3 class="text-xl font-bold text-neutral-text mb-2">Robotics Center, Mumbai</h3>
-                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary-purple/70"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
-                        </div>
-                        <p class="text-neutral-text/70">State-of-the-art facility fostering a passion for robotics among school students.</p>
-                    </div>
-                </div>
-                 <!-- Lab Card -->
-                <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 transform hover:scale-105">
-                    <div class="p-6">
-                         <div class="flex justify-between items-start">
-                             <h3 class="text-xl font-bold text-neutral-text mb-2">Tech Hub, Bangalore</h3>
-                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary-purple/70"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
-                        </div>
-                        <p class="text-neutral-text/70">A collaborative space where academia meets industry, driving real-world projects.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Gallery Section -->
-    <section class="py-20 section-reveal">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl md:text-4xl font-bold text-center text-neutral-text mb-12">Inside a REFFTONIX Lab</h2>
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                <div class="grid gap-4">
-                    <div class="overflow-hidden rounded-xl"><img class="gallery-img h-auto max-w-full rounded-lg cursor-pointer hover:scale-110 transition-transform duration-300" src="https://storage.googleapis.com/gemini-prod/images/03ce4802-127e-4008-8e65-22d7f4be43fe" alt="Robotics Competition"></div>
-                    <div class="overflow-hidden rounded-xl"><img class="gallery-img h-auto max-w-full rounded-lg cursor-pointer hover:scale-110 transition-transform duration-300" src="https://storage.googleapis.com/gemini-prod/images/3fde315c-1549-43c3-883a-446487e83461" alt="Detailed Robotics Kit"></div>
-                </div>
-                <div class="grid gap-4">
-                    <div class="overflow-hidden rounded-xl"><img class="gallery-img h-auto max-w-full rounded-lg cursor-pointer hover:scale-110 transition-transform duration-300" src="https://storage.googleapis.com/gemini-prod/images/4067b570-3507-4402-864a-25c754d92415" alt="Lab Collaboration"></div>
-                    <div class="overflow-hidden rounded-xl"><img class="gallery-img h-auto max-w-full rounded-lg cursor-pointer hover:scale-110 transition-transform duration-300" src="https://storage.googleapis.com/gemini-prod/images/7efd2020-f4b7-4c74-884d-4e2b02a99147" alt="Students Working"></div>
-                </div>
-                <div class="grid gap-4">
-                     <div class="overflow-hidden rounded-xl"><img class="gallery-img h-auto max-w-full rounded-lg cursor-pointer hover:scale-110 transition-transform duration-300" src="https://storage.googleapis.com/gemini-prod/images/2b740751-039c-4828-b80d-8557d391f1a5" alt="Lab Overview"></div>
-                     <div class="overflow-hidden rounded-xl"><img class="gallery-img h-auto max-w-full rounded-lg cursor-pointer hover:scale-110 transition-transform duration-300" src="https://storage.googleapis.com/gemini-prod/images/03ce4802-127e-4008-8e65-22d7f4be43fe" alt="Close up on Robot"></div>
-                </div>
-                 <div class="grid gap-4">
-                    <div class="overflow-hidden rounded-xl"><img class="gallery-img h-auto max-w-full rounded-lg cursor-pointer hover:scale-110 transition-transform duration-300" src="https://storage.googleapis.com/gemini-prod/images/3fde315c-1549-43c3-883a-446487e83461" alt="More students"></div>
-                    <div class="overflow-hidden rounded-xl"><img class="gallery-img h-auto max-w-full rounded-lg cursor-pointer hover:scale-110 transition-transform duration-300" src="https://storage.googleapis.com/gemini-prod/images/7efd2020-f4b7-4c74-884d-4e2b02a99147" alt="Lab equipment"></div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Call to Action Banner -->
-    <section class="bg-primary-purple section-reveal">
-        <div class="container mx-auto px-6 py-16 text-center text-white">
-            <h2 class="text-3xl md:text-4xl font-bold mb-4">Be the next campus to inspire innovation!</h2>
-            <p class="text-lg mb-8 max-w-2xl mx-auto">Join the growing network of institutions revolutionizing education with hands-on technology.</p>
-            <a href="#contact" class="inline-block bg-accent-yellow text-neutral-text font-bold text-lg px-8 py-4 rounded-full shadow-lg hover:bg-opacity-90 transition-all transform hover:scale-105">
-                Contact Us to Get Started
-            </a>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer id="contact" class="bg-dark-purple text-white">
-        <div class="container mx-auto px-6 py-12">
-            <div class="grid md:grid-cols-3 gap-8">
-                <!-- Contact Details -->
-                <div>
-                    <h3 class="text-xl font-bold text-accent-yellow mb-4">Contact Details</h3>
-                    <p class="mb-2"><strong>Email:</strong> contact@refftonix.com</p>
-                    <p class="mb-2"><strong>Phone:</strong> +91 12345 67890</p>
-                    <p><strong>Address:</strong> 123 Tech Avenue, Innovation Park, Bangalore, India</p>
-                </div>
-                <!-- Quick Navigation -->
-                <div>
-                    <h3 class="text-xl font-bold text-accent-yellow mb-4">Quick Navigation</h3>
-                    <ul>
-                        <li class="mb-2"><a href="#home" class="hover:text-accent-yellow transition-colors">Home</a></li>
-                        <li class="mb-2"><a href="#labs" class="hover:text-accent-yellow transition-colors">Our Labs</a></li>
-                        <li class="mb-2"><a href="#gallery" class="hover:text-accent-yellow transition-colors">Gallery</a></li>
-                    </ul>
-                </div>
-                <!-- Social Media -->
-                <div>
-                    <h3 class="text-xl font-bold text-accent-yellow mb-4">Follow Us</h3>
-                    <div class="flex space-x-4">
-                        <a href="#" class="hover:text-accent-yellow transition-colors">LinkedIn</a>
-                        <a href="#" class="hover:text-accent-yellow transition-colors">Instagram</a>
-                        <a href="#" class="hover:text-accent-yellow transition-colors">YouTube</a>
-                    </div>
-                </div>
-            </div>
-            <div class="mt-12 pt-8 border-t border-white/20 text-center text-white/70">
-                <p>&copy; 2024 REFFTONIX Robotics. All Rights Reserved.</p>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Lightbox Modal -->
-    <div id="lightbox" class="fixed inset-0 bg-black bg-opacity-80 flex justify-center items-center z-[100] hidden p-4">
-        <button id="lightbox-close" class="absolute top-4 right-4 text-white text-4xl">&times;</button>
-        <img id="lightbox-image" src="" alt="Gallery Image" class="max-w-full max-h-full rounded-lg">
+   <body class="bg-white">
+  <header class="w-full">
+    <div class="bg-primary text-white py-2 px-4 text-xs flex justify-between items-center" role="banner">
+      <div>
+        <span>Free shipping on orders over $100</span>
+      </div>
+      <div class="flex gap-4" role="navigation" aria-label="Top Navigation">
+        <a href="#" class="hover:underline" aria-label="Help">Help</a>
+        <a href="#" class="hover:underline" aria-label="Store Locator">Store Locator</a>
+        <a href="#" class="hover:underline" aria-label="Order Tracking">Order Tracking</a>
+      </div>
     </div>
+   <!--  Navigation -->
+<nav class="flex justify-between items-center py-4 px-6 border-b border-gray-200" role="navigation" aria-label="Main Navigation">
+  <div class="flex items-center gap-8">
+    <a href="#" class="text-xl font-['Pacifico'] text-primary hover:opacity-80 transition-opacity duration-300" aria-label="Home">H&M</a>
+    <div class="hidden md:flex gap-6" role="menu">
+      <a href="#" class="text-sm font-medium relative group" role="menuitem" aria-label="New In">
+        <span class="relative inline-block">NEW IN
+          <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+        </span>
+      </a>
+      <a href="#" class="text-sm font-medium relative group" role="menuitem" aria-label="Women">
+        <span class="relative inline-block">WOMEN
+          <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+        </span>
+      </a>
+      <a href="#" class="text-sm font-medium relative group" role="menuitem" aria-label="Men">
+        <span class="relative inline-block">MEN
+          <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+        </span>
+      </a>
+      <a href="#" class="text-sm font-medium relative group" role="menuitem" aria-label="Kids">
+        <span class="relative inline-block">KIDS
+          <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+        </span>
+      </a>
+      <a href="#" class="text-sm font-medium relative group" role="menuitem" aria-label="Sale">
+        <span class="relative inline-block">SALE
+          <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+        </span>
+      </a>
+    </div>
+  </div>
+  
+  <div class="flex items-center gap-4">
+    <div class="relative">
+      <input type="text" placeholder="Search" class="pl-8 pr-4 py-2 text-sm border-none bg-gray-100 rounded hover:bg-gray-200 focus:bg-gray-200 transition-colors duration-300 outline-none" aria-label="Search">
+      <div class="absolute left-2 top-1/2 transform -translate-y-1/2 w-4 h-4 flex items-center justify-center">
+        <i class="ri-search-line text-gray-500"></i>
+      </div>
+    </div>
+    
+    <div class="w-8 h-8 flex items-center justify-center hover:bg-gray-100 rounded-full transition-colors duration-300 cursor-pointer" aria-label="User  Account">
+      <i class="ri-user-line"></i>
+    </div>
+    
+    <div class="w-8 h-8 flex items-center justify-center hover:bg-gray-100 rounded-full transition-colors duration-300 cursor-pointer" aria-label="Wishlist">
+      <i class="ri-heart-line"></i>
+    </div>
+    
+    <div id="cartIcon" class="w-8 h-8 flex items-center justify-center hover:bg-gray-100 rounded-full transition-colors duration-300 cursor-pointer relative" aria-label="Shopping Cart">
+      <i class="ri-shopping-bag-line"></i>
+      <div id="cartDropdown" class="hidden absolute top-full right-0 mt-2 w-80 bg-white rounded-lg shadow-xl border border-gray-200 z-50">
+        <div class="p-4">
+          <div id="emptyCart" class="text-center py-8">
+            <i class="ri-shopping-bag-line text-4xl text-gray-300 mb-3"></i>
+            <p class="text-gray-500">Your cart is empty</p>
+          </div>
+          <div id="cartItems" class="hidden">
+            <div class="space-y-4 max-h-64 overflow-y-auto"></div>
+            <div class="border-t border-gray-200 mt-4 pt-4">
+              <div class="flex justify-between text-sm mb-2">
+                <span class="font-medium">Subtotal:</span>
+                <span id="cartSubtotal" class="font-medium">$0.00</span>
+              </div>
+              <div class="space-y-2">
+                <a href="#" class="block bg-white text-primary border border-primary text-center py-2 text-sm font-medium !rounded-button whitespace-nowrap hover:bg-gray-50" aria-label="View Cart">View Cart</a>
+                <a href="#" class="block bg-primary text-white text-center py-2 text-sm font-medium !rounded-button whitespace-nowrap hover:bg-opacity-90" aria-label="Checkout">Checkout</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+ </header>
+ <!-- Home Section -->
+<section class="relative" aria-label="Hero Section">
+  <div class="w-full h-[500px] relative">
+    <div style="background-image: url('https://readdy.ai/api/search-image?query=Minimalist%20fashion%20scene%20with%20three%20models%20wearing%20neutral-colored%20winter%20outfits%20against%20a%20soft%20gray%20background.%20Models%20are%20positioned%20with%20space%20between%20them%2C%20wearing%20stylish%20coats%2C%20hoodies%2C%20and%20casual%20wear.%20The%20image%20has%20a%20clean%2C%20editorial%20aesthetic%20with%20soft%20lighting%20and%20a%20monochromatic%20color%20palette.%20The%20left%20side%20has%20more%20empty%20space%20for%20text%20overlay.&width=1280&height=720&seq=1&orientation=landscape');" class="absolute inset-0 bg-cover bg-center" role="img" aria-label="Fashion scene with models in winter outfits"></div>
+    <div class="absolute inset-0 bg-black bg-opacity-20 flex flex-col items-center justify-center text-white">
+      <h1 class="text-4xl md:text-5xl font-light tracking-wider mb-6 text-center max-w-2xl">IN THE RIGHT OUTFIT ANYTHING IS POSSIBLE</h1>
+      <div class="flex gap-4">
+        <a href="#" class="bg-white text-primary px-6 py-3 font-medium text-sm !rounded-button whitespace-nowrap hover:shadow-lg" aria-label="Shop Now">SHOP NOW</a>
+        <a href="#" class="bg-primary text-white border border-white px-6 py-3 font-medium text-sm !rounded-button whitespace-nowrap hover:bg-opacity-80" aria-label="Explore">EXPLORE</a>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Winter Collections -->
+<section class="py-16 px-6 max-w-7xl mx-auto" aria-label="Winter Collections">
+  <div class="text-center mb-12">
+    <span class="text-sm font-medium text-primary tracking-wider uppercase mb-2 block">New Arrivals</span>
+    <h2 class="text-2xl font-medium mb-2">WINTER COLLECTIONS</h2>
+    <p class="text-gray-500">Get ready for the cold season with our premium winter essentials</p>
+  </div>
+  
+  <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+    <!-- Product 1 -->
+    <div class="product-card relative group" role="article" aria-labelledby="product1">
+      <div class="aspect-[3/4] bg-gray-50 mb-3 relative rounded-lg overflow-hidden">
+        <img src="https://readdy.ai/api/search-image?query=Minimalist%20white%20hoodie%20on%20plain%20white%20background%2C%20product%20photography%20style%2C%20high-quality%20fabric%20texture%20visible%2C%20centered%20composition%2C%20clean%20lighting%2C%20no%20shadows%2C%20fashion%20e-commerce%20style&width=400&height=500&seq=2&orientation=portrait" alt="Luxurious Hoodie" class="w-full h-full object-cover object-top" />
+        <div class="wishlist-icon absolute top-3 right-3 w-8 h-8 bg-white rounded-full flex items-center justify-center shadow-sm transition-transform duration-300 hover:scale-110" aria-label="Add to Wishlist">
+          <i class="ri-heart-line text-primary"></i>
+        </div>
+      </div>
+      <h3 class="text-sm font-medium" id="product1">LUXURIOUS HOODIE</h3>
+      <p class="text-sm text-gray-500">$89.99</p>
+    </div>
+    
+    <!-- Product 2 -->
+    <div class="product-card relative group" role="article" aria-labelledby="product2">
+      <div class="aspect-[3/4] bg-gray-50 mb-3 relative rounded-lg overflow-hidden">
+        <img src="https://readdy.ai/api/search-image?query=Plaid%20wool%20scarf%20with%20black%20and%20white%20checkered%20pattern%20on%20plain%20white%20background%2C%20product%20photography%20style%2C%20neatly%20folded%2C%20soft%20texture%20visible%2C%20centered%20composition%2C%20clean%20lighting%2C%20no%20shadows%2C%20fashion%20e-commerce%20style&width=400&height=500&seq=3&orientation=portrait" alt="Plaid Wool Scarf" class="w-full h-full object-cover object-top" />
+        <div class="wishlist-icon absolute top-3 right-3 w-8 h-8 bg-white rounded-full flex items-center justify-center shadow-sm transition-transform duration-300 hover:scale-110" aria-label="Add to Wishlist">
+          <i class="ri-heart-line text-primary"></i>
+        </div>
+      </div>
+      <h3 class="text-sm font-medium" id="product2">PLAID WOOL SCARF</h3>
+      <p class="text-sm text-gray-500">$49.99</p>
+    </div>
+    
+    <!-- Product 3 -->
+    <div class="product-card relative group" role="article" aria-labelledby="product3">
+      <div class="aspect-[3/4] bg-gray-50 mb-3 relative rounded-lg overflow-hidden">
+        <img src="https://readdy.ai/api/search-image?query=Black%20puffer%20jacket%20on%20plain%20white%20background%2C%20product%20photography%20style%2C%20quilted%20texture%20visible%2C%20centered%20composition%2C%20clean%20lighting%2C%20no%20shadows%2C%20fashion%20e-commerce%20style&width=400&height=500&seq=4&orientation=portrait" alt="Premium Puffer Coat" class="w-full h-full object-cover object-top" />
+        <div class="wishlist-icon absolute top-3 right-3 w-8 h-8 bg-white rounded-full flex items-center justify-center shadow-sm transition-transform duration-300 hover:scale-110" aria-label="Add to Wishlist">
+          <i class="ri-heart-line text-primary"></i>
+        </div>
+      </div>
+      <h3 class="text-sm font-medium" id="product3">PREMIUM PUFFER COAT</h3>
+      <p class="text-sm text-gray-500">$149.99</p>
+    </div>
+    
+    <!-- Product 4 -->
+    <div class="product-card relative group" role="article" aria-labelledby="product4">
+      <div class="aspect-[3/4] bg-gray-50 mb-3 relative rounded-lg overflow-hidden">
+        <img src="https://readdy.ai/api/search-image?query=White%20knit%20beanie%20hat%20on%20plain%20white%20background%2C%20product%20photography%20style%2C%20ribbed%20texture%20visible%2C%20centered%20composition%2C%20clean%20lighting%2C%20no%20shadows%2C%20fashion%20e-commerce%20style&width=400&height=500&seq=5&orientation=portrait" alt="Essential Beanie" class="w-full h-full object-cover object-top" />
+        <div class="wishlist-icon absolute top-3 right-3 w-8 h-8 bg-white rounded-full flex items-center justify-center shadow-sm transition-transform duration-300 hover:scale-110" aria-label="Add to Wishlist">
+          <i class="ri-heart-line text-primary"></i>
+        </div>
+      </div>
+      <h3 class="text-sm font-medium" id="product4">ESSENTIAL BEANIE</h3>
+      <p class="text-sm text-gray-500">$29.99</p>
+    </div>
+    
+    <!-- Additional Products -->
+    <!-- Product 5 -->
+    <div class="product-card relative group" role="article" aria-labelledby="product5">
+      <div class="aspect-[3/4] bg-gray-50 mb-3 relative rounded-lg overflow-hidden">
+        <img src="https://readdy.ai/api/search-image?query=Elegant%20camel%20colored%20wool%20coat%20on%20pure%20white%20background.%20Minimalist%20product%20photography%20showing%20the%20luxurious%20texture%20and%20tailored%20fit.%20Clean%20composition%20with%20perfect%20lighting%20highlighting%20the%20premium%20quality%20and%20classic%20design%20details.%20Professional%20e-commerce%20style%20with%20subtle%20shadows&width=400&height=500&seq=22&orientation=portrait" alt="Classic Wool Coat" class="w-full h-full object-cover object-top" />
+        <div class="wishlist-icon absolute top-3 right-3 w-8 h-8 bg-white rounded-full flex items-center justify-center shadow-sm transition-transform duration-300 hover:scale-110" aria-label="Add to Wishlist">
+          <i class="ri-heart-line text-primary"></i>
+        </div>
+      </div>
+      <h3 class="text-sm font-medium" id="product5">CLASSIC WOOL COAT</h3>
+      <p class="text-sm text-gray-500">$199.99</p>
+    </div>
+    
+    <!-- Product 6 -->
+    <div class="product-card relative group" role="article" aria-labelledby="product6">
+      <div class="aspect-[3/4] bg-gray-50 mb-3 relative rounded-lg overflow-hidden">
+        <img src="https://readdy.ai/api/search-image?query=Light%20pink%20beanie%20hat%20on%20plain%20white%20background%2C%20product%20photography%20style%2C%20soft%20knit%20texture%20visible%2C%20centered%20composition%2C%20clean%20lighting%2C%20no%20shadows%2C%20fashion%20e-commerce%20style&width=400&height=500&seq=7&orientation=portrait" alt="Blush Beanie" class="w-full h-full object-cover object-top" />
+        <div class="wishlist-icon absolute top-3 right-3 w-8 h-8 bg-white rounded-full flex items-center justify-center shadow-sm transition-transform duration-300 hover:scale-110" aria-label="Add to Wishlist">
+          <i class="ri-heart-line text-primary"></i>
+        </div>
+      </div>
+      <h3 class="text-sm font-medium" id="product6">BLUSH BEANIE</h3>
+      <p class="text-sm text-gray-500">$29.99</p>
+    </div>
+    
+    <!-- Product 7 -->
+    <div class="product-card relative group" role="article" aria-labelledby="product7">
+      <div class="aspect-[3/4] bg-gray-50 mb-3 relative rounded-lg overflow-hidden">
+        <img src="https://public.readdy.ai/ai/img_res/6f0f429d-0f7b-454f-8026-442d5834a13d.png" alt="Leather Gloves" class="w-full h-full object-cover object-top" />
+        <div class="wishlist-icon absolute top-3 right-3 w-8 h-8 bg-white rounded-full flex items-center justify-center shadow-sm transition-transform duration-300 hover:scale-110" aria-label="Add to Wishlist">
+          <i class="ri-heart-line text-primary"></i>
+        </div>
+      </div>
+      <h3 class="text-sm font-medium" id="product7">LEATHER GLOVES</h3>
+      <p class="text-sm text-gray-500">$59.99</p>
+    </div>
+    
+    <!-- Product 8 -->
+    <div class="product-card relative group" role="article" aria-labelledby="product8">
+      <div class="aspect-[3/4] bg-gray-50 mb-3 relative rounded-lg overflow-hidden">
+        <img src="https://readdy.ai/api/search-image?query=White%20sneakers%20on%20plain%20white%20background%2C%20product%20photography%20style%2C%20clean%20minimalist%20design%2C%20centered%20composition%2C%20clean%20lighting%2C%20no%20shadows%2C%20fashion%20e-commerce%20style&width=400&height=500&seq=9&orientation=portrait" alt="Comfort Sneakers" class="w-full h-full object-cover object-top" />
+        <div class="wishlist-icon absolute top-3 right-3 w-8 h-8 bg-white rounded-full flex items-center justify-center shadow-sm transition-transform duration-300 hover:scale-110" aria-label="Add to Wishlist">
+          <i class="ri-heart-line text-primary"></i>
+        </div>
+      </div>
+      <h3 class="text-sm font-medium" id="product8">COMFORT SNEAKERS</h3>
+      <p class="text-sm text-gray-500">$119.99</p>
+    </div>
+  </div>
+  
+  <div class="flex justify-center mt-10">
+    <a href="#" class="bg-primary text-white px-6 py-3 text-sm font-medium !rounded-button whitespace-nowrap hover:bg-opacity-80 hover:shadow-lg transition-all duration-300" aria-label="View All Products">VIEW ALL PRODUCTS</a>
+  </div>
+</section>
+<!-- Promotional Sections -->
+<section class="py-10 px-6 max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8" aria-label="Promotional Sections">
+  <!-- Valentine's Promo -->
+  <div class="relative h-[400px] overflow-hidden" role="article" aria-labelledby="valentinesPromo">
+    <div style="background-image: url('https://readdy.ai/api/search-image?query=Minimalist%20Valentines%20Day%20themed%20fashion%20display%20with%20soft%20pink%20and%20red%20accessories%20against%20a%20neutral%20background.%20Elegant%20scarves%2C%20gloves%2C%20and%20small%20gift%20items%20arranged%20artistically.%20Clean%2C%20editorial%20styling%20with%20subtle%20romantic%20elements.%20The%20image%20has%20a%20premium%2C%20high-end%20feel%20with%20perfect%20lighting%20and%20composition.&width=600&height=400&seq=10&orientation=landscape');" class="absolute inset-0 bg-cover bg-center" role="img" aria-label="Valentine's Day themed fashion display"></div>
+    <div class="absolute inset-0 bg-gradient-to-r from-black/60 to-black/20 flex flex-col justify-center p-8 text-white">
+      <h2 class="text-3xl font-light mb-2" id="valentinesPromo">Valentine's</h2>
+      <p class="text-lg mb-6">Find the perfect gift for your loved ones</p>
+      <a href="#" class="bg-white text-primary px-6 py-3 text-sm font-medium w-fit !rounded-button whitespace-nowrap hover:shadow-lg hover:bg-opacity-90 transition-all duration-300" aria-label="Shop Valentine's Collection">SHOP NOW</a>
+    </div>
+  </div>
+  
+  <!-- Perfect Look Promo -->
+  <div class="relative h-[400px] overflow-hidden bg-gray-100 p-8 flex flex-col justify-center" role="article" aria-labelledby="perfectLookPromo">
+    <h2 class="text-2xl font-medium mb-2" id="perfectLookPromo">FIND YOUR PERFECT LOOK AT HRF'S STY</h2>
+    <p class="text-gray-600 mb-6">Discover our curated collection of premium essentials designed for everyday elegance. Our timeless pieces combine comfort with sophisticated style for the modern wardrobe.</p>
+    <div class="mb-6">
+      <span class="text-4xl font-bold">87%</span>
+      <span class="text-lg ml-2">OFF DISCOUNT!</span>
+    </div>
+    <a href="#" class="bg-primary text-white px-6 py-3 text-sm font-medium w-fit !rounded-button whitespace-nowrap hover:bg-opacity-80 hover:shadow-lg transition-all duration-300" aria-label="Shop Perfect Look Collection">SHOP NOW</a>
+  </div>
+</section>
+<!-- Winter Campaign -->
+<section class="py-10 px-6 max-w-7xl mx-auto" aria-label="Winter Campaign">
+  <div class="relative h-[400px] overflow-hidden rounded" role="article" aria-labelledby="winterCampaign">
+    <div style="background-image: url('https://readdy.ai/api/search-image?query=Three%20models%20walking%20on%20a%20snowy%20beach%20wearing%20stylish%20winter%20outfits%20in%20neutral%20tones.%20Wide%20landscape%20shot%20with%20plenty%20of%20negative%20space.%20Models%20are%20spaced%20apart%2C%20wearing%20different%20styles%20of%20coats%20and%20winter%20accessories.%20Minimalist%20winter%20fashion%20editorial%20with%20a%20clean%2C%20monochromatic%20aesthetic%20and%20soft%20natural%20lighting.&width=1280&height=500&seq=11&orientation=landscape');" class="absolute inset-0 bg-cover bg-center" role="img" aria-label="Winter fashion editorial with models on a snowy beach"></div>
+    <div class="absolute inset-0 bg-black bg-opacity-30 flex flex-col items-center justify-center p-8 text-white text-center">
+      <h2 class="text-3xl font-medium mb-2" id="winterCampaign">WEAR TO WINTER</h2>
+      <p class="text-lg mb-6 max-w-md">Explore our collection of premium winter essentials designed for style and warmth</p>
+      <a href="#" class="bg-white text-primary px-6 py-3 text-sm font-medium w-fit !rounded-button whitespace-nowrap hover:shadow-lg hover:bg-opacity-90 transition-all duration-300" aria-label="Shop Winter Collection">SHOP NOW</a>
+    </div>
+  </div>
+</section>
+<!-- Featured Collections Grid -->
+<section class="py-16 px-6 max-w-7xl mx-auto" aria-label="Featured Collections">
+  <div class="text-center mb-12">
+    <span class="text-sm font-medium text-primary tracking-wider uppercase mb-2 block">Explore Our Selection</span>
+    <h2 class="text-2xl font-medium">TRENDING CATEGORIES</h2>
+    <p class="text-gray-500 mt-2">Discover the latest styles in our curated collections</p>
+  </div>
+  
+  <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+    <!-- Category 1 -->
+    <div class="category-card relative aspect-square overflow-hidden group cursor-pointer" role="article" aria-labelledby="category1">
+      <div style="background-image: url('https://readdy.ai/api/search-image?query=Stack%20of%20neatly%20folded%20jeans%20in%20various%20shades%20of%20blue%20and%20black%20against%20a%20white%20background.%20Clean%2C%20minimalist%20product%20photography%20with%20soft%20shadows.%20The%20denim%20textures%20are%20clearly%20visible%2C%20showing%20the%20quality%20of%20the%20fabric.%20Professional%20e-commerce%20style%20image%20with%20perfect%20lighting.&width=400&height=400&seq=12&orientation=squarish');" class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" role="img" aria-label="Neatly folded jeans"></div>
+      <div class="category-overlay absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center transition-all duration-500 group-hover:bg-opacity-60">
+        <div class="transform transition-transform duration-500 group-hover:-translate-y-2">
+          <h3 class="category-name text-white text-xl font-medium mb-2" id="category1">JEANS</h3>
+          <p class="text-white text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-500">Explore Collection</p>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Category 2 -->
+    <div class="category-card relative aspect-square overflow-hidden group cursor-pointer" role="article" aria-labelledby="category2">
+      <div style="background-image: url('https://readdy.ai/api/search-image?query=Minimalist%20white%20hoodie%20hanging%20against%20a%20light%20gray%20background.%20Clean%2C%20editorial%20product%20photography%20with%20subtle%20shadows.%20The%20fabric%20texture%20and%20details%20are%20clearly%20visible%2C%20showing%20the%20quality%20of%20the%20garment.%20Professional%20e-commerce%20style%20image%20with%20perfect%20lighting.&width=400&height=400&seq=13&orientation=squarish');" class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" role="img" aria-label="Minimalist white hoodie"></div>
+      <div class="category-overlay absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center transition-all duration-500 group-hover:bg-opacity-60">
+        <div class="transform transition-transform duration-500 group-hover:-translate-y-2">
+          <h3 class="category-name text-white text-xl font-medium mb-2" id="category2">HOODIES</h3>
+          <p class="text-white text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-500">Explore Collection</p>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Category 3 -->
+    <div class="category-card relative aspect-square overflow-hidden group cursor-pointer" role="article" aria-labelledby="category3">
+      <div style="background-image: url('https://readdy.ai/api/search-image?query=Neatly%20arranged%20collection%20of%20minimalist%20hats%20including%20beanies%20and%20caps%20in%20neutral%20colors%20against%20a%20light%20background.%20Clean%2C%20editorial%20product%20photography%20with%20subtle%20shadows.%20The%20fabric%20textures%20and%20details%20are%20clearly%20visible.%20Professional%20e-commerce%20style%20image%20with%20perfect%20lighting.&width=400&height=400&seq=14&orientation=squarish');" class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" role="img" aria-label="Collection of hats"></div>
+      <div class="category-overlay absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center transition-all duration-500 group-hover:bg-opacity-60">
+        <div class="transform transition-transform duration-500 group-hover:-translate-y-2">
+          <h3 class="category-name text-white text-xl font-medium mb-2" id="category3">HATS</h3>
+          <p class="text-white text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-500">Explore Collection</p>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Category 4 -->
+    <div class="category-card relative aspect-square overflow-hidden group cursor-pointer" role="article" aria-labelledby="category4">
+      <div style="background-image: url('https://readdy.ai/api/search-image?query=Person%20wearing%20minimalist%20white%20sneakers%20walking%20on%20a%20light%20background.%20Only%20the%20lower%20legs%20and%20feet%20are%20visible.%20Clean%2C%20editorial%20fashion%20photography%20with%20subtle%20shadows.%20The%20sneakers%20are%20the%20focal%20point%2C%20showing%20their%20design%20and%20quality.%20Professional%20e-commerce%20style%20image%20with%20perfect%20lighting.&width=400&height=400&seq=15&orientation=squarish');" class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" role="img" aria-label="Minimalist white sneakers"></div>
+      <div class="category-overlay absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center transition-all duration-500 group-hover:bg-opacity-60">
+        <div class="transform transition-transform duration-500 group-hover:-translate-y-2">
+          <h3 class="category-name text-white text-xl font-medium mb-2" id="category4">SNEAKERS</h3>
+          <p class="text-white text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-500">Explore Collection</p>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Category 5 -->
+    <div class="category-card relative aspect-square overflow-hidden group cursor-pointer" role="article" aria-labelledby="category5">
+      <div style="background-image: url('https://readdy.ai/api/search-image?query=Minimalist%20black%20jacket%20hanging%20against%20a%20light%20gray%20background.%20Clean%2C%20editorial%20product%20photography%20with%20subtle%20shadows.%20The%20fabric%20texture%20and%20details%20are%20clearly%20visible%2C%20showing%20the%20quality%20of%20the%20garment.%20Professional%20e-commerce%20style%20image%20with%20perfect%20lighting.&width=400&height=400&seq=16&orientation=squarish');" class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" role="img" aria-label="Minimalist black jacket"></div>
+      <div class="category-overlay absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center transition-all duration-500 group-hover:bg-opacity-60">
+        <div class="transform transition-transform duration-500 group-hover:-translate-y-2">
+          <h3 class="category-name text-white text-xl font-medium mb-2" id="category5">JACKETS</h3>
+          <p class="text-white text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-500">Explore Collection</p>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Category 6 -->
+    <div class="category-card relative aspect-square overflow-hidden group cursor-pointer" role="article" aria-labelledby="category6">
+      <div style="background-image: url('https://readdy.ai/api/search-image?query=Collection%20of%20minimalist%20accessories%20including%20watches%2C%20bracelets%2C%20and%20small%20leather%20goods%20arranged%20neatly%20against%20a%20light%20background.%20Clean%2C%20editorial%20product%20photography%20with%20subtle%20shadows.%20The%20textures%20and%20details%20are%20clearly%20visible%2C%20showing%20the%20quality%20of%20the%20items.%20Professional%20e-commerce%20style%20image%20with%20perfect%20lighting.&width=400&height=400&seq=17&orientation=squarish');" class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" role="img" aria-label="Collection of minimalist accessories"></div>
+      <div class="category-overlay absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center transition-all duration-500 group-hover:bg-opacity-60">
+        <div class="transform transition-transform duration-500 group-hover:-translate-y-2">
+          <h3 class="category-name text-white text-xl font-medium mb-2" id="category6">ACCESSORIES</h3>
+          <p class="text-white text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-500">Explore Collection</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Shop By Category -->
+<section class="py-16 px-6 max-w-7xl mx-auto bg-gray-100">
+    <div class="text-center mb-12">
+        <h2 class="text-2xl font-medium">SHOP BY CATEGORY</h2>
+        <p class="text-gray-500 mt-2">Find your style in our curated collections</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <!-- Men -->
+        <div class="relative h-[400px] overflow-hidden rounded group cursor-pointer transition-transform duration-300 hover:shadow-lg">
+            <div style="background-image: url('https://readdy.ai/api/search-image?query=Stylish%20male%20model%20wearing%20a%20minimalist%20black%20coat%20against%20a%20neutral%20background.%20The%20model%20is%20photographed%20from%20chest%20up%2C%20looking%20slightly%20away%20from%20camera.%20Clean%2C%20editorial%20fashion%20photography%20with%20perfect%20lighting%20highlighting%20the%20texture%20and%20fit%20of%20the%20coat.%20Monochromatic%20aesthetic%20with%20a%20premium%20feel.&width=400&height=500&seq=18&orientation=portrait');" class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"></div>
+            <div class="absolute inset-0 bg-black bg-opacity-40 flex flex-col justify-center items-center transition-all duration-500 group-hover:bg-opacity-60">
+                <div class="transform transition-transform duration-500 group-hover:-translate-y-2">
+                    <h2 class="text-3xl font-medium text-white mb-2">MEN</h2>
+                    <p class="text-white text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-500">Explore Collection</p>
+                    <a href="#" class="mt-2 px-4 py-2 bg-white text-black rounded hover:bg-gray-200 transition">View Now</a>
+                </div>
+            </div>
+        </div>
+        <!-- Women -->
+        <div class="relative h-[400px] overflow-hidden rounded group cursor-pointer transition-transform duration-300 hover:shadow-lg">
+            <div style="background-image: url('https://readdy.ai/api/search-image?query=Stylish%20female%20model%20with%20natural%20curly%20hair%20wearing%20a%20minimalist%20black%20top%20against%20a%20neutral%20background.%20The%20model%20is%20photographed%20from%20chest%20up%2C%20with%20a%20confident%20expression.%20Clean%2C%20editorial%20fashion%20photography%20with%20perfect%20lighting%20highlighting%20the%20models%20features%20and%20the%20texture%20of%20the%20clothing.%20Monochromatic%20aesthetic%20with%20a%20premium%20feel.&width=400&height=500&seq=19&orientation=portrait');" class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"></div>
+            <div class="absolute inset-0 bg-black bg-opacity-40 flex flex-col justify-center items-center transition-all duration-500 group-hover:bg-opacity-60">
+                <div class="transform transition-transform duration-500 group-hover:-translate-y-2">
+                    <h2 class="text-3xl font-medium text-white mb-2">WOMEN</h2>
+                    <p class="text-white text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-500">Explore Collection</p>
+                    <a href="#" class="mt-2 px-4 py-2 bg-white text-black rounded hover:bg-gray-200 transition">View Now</a>
+                </div>
+            </div>
+        </div>
+        <!-- Kids -->
+        <div class="relative h-[400px] overflow-hidden rounded group cursor-pointer transition-transform duration-300 hover:shadow-lg">
+            <div style="background-image: url('https://readdy.ai/api/search-image?query=Stylish%20child%20model%20wearing%20a%20minimalist%20dark%20coat%20against%20a%20neutral%20background.%20The%20child%20is%20photographed%20from%20chest%20up%2C%20with%20a%20natural%20expression.%20Clean%2C%20editorial%20fashion%20photography%20with%20perfect%20lighting%20highlighting%20the%20texture%20and%20fit%20of%20the%20coat.%20Monochromatic%20aesthetic%20with%20a%20premium%20feel.&width=400&height=500&seq=20&orientation=portrait');" class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"></div>
+            <div class="absolute inset-0 bg-black bg-opacity-40 flex flex-col justify-center items-center transition-all duration-500 group-hover:bg-opacity-60">
+                <div class="transform transition-transform duration-500 group-hover:-translate-y-2">
+                    <h2 class="text-3xl font-medium text-white mb-2">KIDS</h2>
+                    <p class="text-white text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-500">Explore Collection</p>
+                    <a href="#" class="mt-2 px-4 py-2 bg-white text-black rounded hover:bg-gray-200 transition">View Now</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Footer -->
+<footer class="bg-primary text-white pt-16 pb-8">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8 pb-12 border-b border-gray-700">
+            <div>
+                <a href="#" class="text-2xl font-['Pacifico'] mb-6 block">H&M</a>
+                <p class="text-gray-300 text-sm mb-6">Premium fashion essentials for the modern wardrobe. Timeless designs crafted with quality materials.</p>
+                <div class="flex gap-4">
+                    <a href="#" aria-label="Facebook" class="w-8 h-8 flex items-center justify-center bg-white bg-opacity-10 rounded-full hover:bg-opacity-20 transition">
+                        <i class="ri-facebook-fill text-sm"></i>
+                    </a>
+                    <a href="#" aria-label="Instagram" class="w-8 h-8 flex items-center justify-center bg-white bg-opacity-10 rounded-full hover:bg-opacity-20 transition">
+                        <i class="ri-instagram-line text-sm"></i>
+                    </a>
+                    <a href="#" aria-label="Twitter" class="w-8 h-8 flex items-center justify-center bg-white bg-opacity-10 rounded-full hover:bg-opacity-20 transition">
+                        <i class="ri-twitter-x-line text-sm"></i>
+                    </a>
+                    <a href="#" aria-label="Pinterest" class="w-8 h-8 flex items-center justify-center bg-white bg-opacity-10 rounded-full hover:bg-opacity-20 transition">
+                        <i class="ri-pinterest-line text-sm"></i>
+                    </a>
+                </div>
+            </div>
+            <div>
+                <h3 class="text-sm font-semibold uppercase mb-4">SHOP</h3>
+                <ul class="space-y-2">
+                    <li><a href="#" class="text-gray-300 hover:text-white text-sm transition">New Arrivals</a></li>
+                    <li><a href="#" class="text-gray-300 hover:text-white text-sm transition">Women</a></li>
+                    <li><a href="#" class="text-gray-300 hover:text-white text-sm transition">Men</a></li>
+                    <li><a href="#" class="text-gray-300 hover:text-white text-sm transition">Kids</a></li>
+                    <li><a href="#" class="text-gray-300 hover:text-white text-sm transition">Accessories</a></li>
+                    <li><a href="#" class="text-gray-300 hover:text-white text-sm transition">Sale</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="text-sm font-semibold uppercase mb-4">COMPANY</h3>
+                <ul class="space-y-2">
+                    <li><a href="#" class="text-gray-300 hover:text-white text-sm transition">About Us</a></li>
+                    <li><a href="#" class="text-gray-300 hover:text-white text-sm transition">Careers</a></li>
+                    <li><a href="#" class="text-gray-300 hover:text-white text-sm transition">Sustainability</a></li>
+                    <li><a href="#" class="text-gray-300 hover:text-white text-sm transition">Store Locator</a></li>
+                    <li><a href="#" class="text-gray-300 hover:text-white text-sm transition">Contact Us</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="text-sm font-semibold uppercase mb-4">HELP</h3>
+                <ul class="space-y-2">
+                    <li><a href="#" class="text-gray-300 hover:text-white text-sm transition">Customer Service</a></li>
+                    <li><a href="#" class="text-gray-300 hover:text-white text-sm transition">Shipping & Returns</a></li>
+                    <li><a href="#" class="text-gray-300 hover:text-white text-sm transition">Size Guide</a></li>
+                    <li><a href="#" class="text-gray-300 hover:text-white text-sm transition">FAQs</a></li>
+                    <li><a href="#" class="text-gray-300 hover:text-white text-sm transition">Privacy Policy</a></li>
+                    <li><a href="#" class="text-gray-300 hover:text-white text-sm transition">Terms & Conditions</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="pt-8 flex flex-col md:flex-row justify-between items-center">
+            <div class="mb-4 md:mb-0">
+                <p class="text-sm text-gray-400">© 2025 H&M. All rights reserved.</p>
+            </div>
+            <div class="flex gap-3">
+                <div class="w-10 h-6 flex items-center justify-center bg-white bg-opacity-10 rounded">
+                    <i class="ri-visa-fill"></i>
+                </div>
+                <div class="w-10 h-6 flex items-center justify-center bg-white bg-opacity-10 rounded">
+                    <i class="ri-mastercard-fill"></i>
+                </div>
+                <div class="w-10 h-6 flex items-center justify-center bg-white bg-opacity-10 rounded">
+                    <i class="ri-paypal-fill"></i>
+                </div>
+                <div class="w-10 h-6 flex items-center justify-center bg-white bg-opacity-10 rounded">
+                    <i class="ri-apple-fill"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
 
-    <!-- JavaScript Logic -->
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            // Navbar scroll effect
-            const navbar = document.getElementById('navbar');
-            window.addEventListener('scroll', () => {
-                if (window.scrollY > 50) {
-                    navbar.classList.add('bg-white/80', 'shadow-md', 'backdrop-blur-sm');
-                } else {
-                    navbar.classList.remove('bg-white/80', 'shadow-md', 'backdrop-blur-sm');
-                }
-            });
 
-            // Section reveal on scroll
-            const sections = document.querySelectorAll('.section-reveal');
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, {
-                threshold: 0.1
-            });
-            sections.forEach(section => observer.observe(section));
-            
-            // Lightbox functionality
-            const lightbox = document.getElementById('lightbox');
-            const lightboxImage = document.getElementById('lightbox-image');
-            const lightboxClose = document.getElementById('lightbox-close');
-            const galleryImages = document.querySelectorAll('.gallery-img');
 
-            galleryImages.forEach(img => {
-                img.addEventListener('click', () => {
-                    lightboxImage.src = img.src;
-                    lightbox.classList.remove('hidden');
-                });
-            });
+ <script src="scripts.js"></script>
 
-            const closeLightbox = () => {
-                lightbox.classList.add('hidden');
-            };
-
-            lightboxClose.addEventListener('click', closeLightbox);
-            lightbox.addEventListener('click', (e) => {
-                if (e.target === lightbox) {
-                    closeLightbox();
-                }
-            });
-        });
-    </script>
 </body>
 </html>
